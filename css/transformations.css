@@ -1,0 +1,21 @@
+/* Transformations page: dark header + before/after cards */
+.phead{position:relative;padding:176px clamp(20px,5vw,80px) 80px;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.93)),url(../assets/images/hero-bg.jpg) 70% 12%/cover;border-bottom:3px solid var(--brand-red)}
+.phead .ttl{max-width:900px;margin-inline:auto}.phead .lead2{margin:22px auto 0;color:var(--on-dark-body)}.phead .lbl{color:#ff4d48}
+.links a[aria-current]{color:#fff;border-bottom:2px solid var(--brand-red);padding-bottom:4px}
+.tgrid{list-style:none;margin:0 auto;padding:0;display:grid;gap:28px;grid-template-columns:1fr;max-width:1040px}
+@media(min-width:640px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+.tc{position:relative;aspect-ratio:3/4;border-radius:26px;overflow:hidden;background:#111;color:#fff;box-shadow:0 14px 34px rgba(0,0,0,.18);transition:transform .3s,box-shadow .3s}
+.tc:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(0,0,0,.3)}
+.halves{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr}
+.halves img{width:100%;height:100%;object-fit:cover;object-position:var(--x,50%) center;display:block}
+.halves::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:var(--brand-red)}
+.tag{position:absolute;top:18px;z-index:2;background:#0a0a0a;color:#fff;font:700 .8rem/1 var(--body);padding:8px 14px;border-radius:99px}
+.tag.b{left:18px}.tag.a{left:calc(50% + 18px)}
+.tinfo{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:96px 24px 26px;background:linear-gradient(0deg,rgba(0,0,0,.95) 0,rgba(0,0,0,.75) 55%,transparent)}
+.trow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.meta{display:inline-flex;align-items:center;gap:8px;border:1px solid #ff4d48;color:#ff6b66;background:rgba(230,43,39,.14);border-radius:99px;padding:6px 14px;font:700 .75rem/1 var(--body);letter-spacing:.04em;text-transform:uppercase}
+.meta svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.kind{font:700 .72rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:#d0d0d0}
+.tinfo h3{margin:14px 0 6px;font:800 1.9rem/1 var(--head);text-transform:uppercase}
+.tinfo p{margin:0;color:#e0e0e0;font-size:.95rem;line-height:1.5}
+@media(max-width:420px){.tinfo{padding:80px 16px 18px}.tinfo h3{font-size:1.6rem}.tinfo p{font-size:.85rem}}
