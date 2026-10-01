@@ -72,3 +72,36 @@
 .rail .tile:nth-child(6){background:url(../assets/images/instagram/6.jpg) center/cover,url("https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80") center/cover,var(--g)}
 .rail .tile:nth-child(7){background:url(../assets/images/instagram/7.jpg) center/cover,url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80") center 60%/cover,var(--g)}
 .rail .tile:nth-child(8){background:url(../assets/images/instagram/8.jpg) center/cover,url("https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80") center 30%/cover,var(--g)}
+
+/* ===== Navbar: sticky + animated ===== */
+.hero,.phead{position:relative;z-index:60}
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:height .4s var(--ease),background .4s,box-shadow .4s,border-color .4s}
+.nav.sc{height:76px;background:rgba(8,8,8,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.nav .logo img{transition:width .4s var(--ease),height .4s var(--ease)}.nav.sc .logo img{width:60px;height:60px}
+.links a{position:relative;padding-block:8px;transition:color .3s,transform .4s var(--ease)}
+.links a::before{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--brand-red);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.links a:hover{color:#fff;transform:translateY(-2px)}.links a:hover::before,.links a[aria-current]::before{transform:scaleX(1)}
+.links a.sub::after{transition:transform .35s var(--ease)}.links a.sub:hover::after{transform:rotate(225deg) translateY(-2px)}
+@keyframes navIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.logo,.links li,.pill,.burger{animation:navIn .7s var(--ease) both}
+.links li:nth-child(1){animation-delay:.08s}.links li:nth-child(2){animation-delay:.14s}.links li:nth-child(3){animation-delay:.2s}.links li:nth-child(4){animation-delay:.26s}.links li:nth-child(5){animation-delay:.32s}.links li:nth-child(6){animation-delay:.38s}.links li:nth-child(7){animation-delay:.44s}.pill,.burger{animation-delay:.5s}
+.pill{transition:background .3s,border-color .3s,transform .4s var(--ease)}.pill:hover{transform:translateY(-2px);background:var(--red-ink);border-color:var(--red-ink)}
+.pill .dot{transition:transform .4s var(--ease),background .3s,color .3s}.pill:hover .dot{transform:rotate(45deg);background:#fff;color:var(--red-ink)}
+@media(max-width:1100px){.nav.open{background:rgba(8,8,8,.97)}.nav.open .links{display:flex;flex-direction:column;align-items:flex-start;gap:4px;position:absolute;top:100%;left:0;right:0;padding:18px clamp(20px,5vw,48px) 28px;background:rgba(8,8,8,.97);border-bottom:1px solid rgba(255,255,255,.12)}.nav.open .links li{animation:none}.nav.open .links a{padding:12px 0;font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){.logo,.links li,.pill,.burger{animation:none}}
+/* ===== About: real photos in the stack ===== */
+.stack img{width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:var(--r-md);box-shadow:0 14px 34px rgba(0,0,0,.2);display:block}
+.stack .s1{grid-area:1/1}.stack .s2{grid-area:2/1}.stack .s3{grid-area:1/2/3/3}
+/* ===== Coaching: header, uniform 4x2 grid, CTA ===== */
+#coaching .co-head{max-width:760px;margin:0 auto;text-align:center}#coaching .co-head .ap{margin-inline:auto;text-align:center}
+#coaching .co-sub{margin:48px 0 24px;text-align:center;font:800 1.35rem 'Cairo',sans-serif;color:var(--on-light)}
+#coaching .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+#coaching .cards .card{margin-top:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px 18px}
+#coaching .co-cta{text-align:center;margin-top:44px}
+@media(max-width:1100px){#coaching .cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){#coaching .cards{grid-template-columns:1fr}}
+/* ===== Steps: true circles, white by default, red on hover only ===== */
+#steps .step{display:block;width:100%;padding:0 24px;text-align:center;cursor:default}
+#steps .ring{display:block;position:relative;width:120px;height:120px;margin:0 auto 24px}
+#steps .sico{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.08);transition:background .35s}
+#steps .sico svg{width:46px;height:46px;stroke:#1f2a5a;transition:stroke .35s}
+#steps .step:hover{transform:none}#steps .step:hover .sico{background:var(--brand-red)}#steps .step:hover .sico svg{stroke:#fff}
