@@ -1,0 +1,178 @@
+/* MFT calorie calculator — scoped to .mft-calorie-calculator only */
+.mft-calorie-calculator{--c-bg:#080808;--c-panel:#111;--c-panel2:#161616;--c-line:rgba(255,255,255,.12);--c-line2:rgba(255,255,255,.2);--c-red:#E50914;--c-red-soft:rgba(229,9,20,.1);--c-text:#fff;--c-mute:#b8b8bf;--c-err:#ff6b6b;
+max-width:920px;margin:0 auto;color:var(--c-text);font-family:'Cairo',sans-serif;line-height:1.8;display:grid;gap:clamp(20px,3vw,32px)}
+.mft-calorie-calculator *,.mft-calorie-calculator *::before,.mft-calorie-calculator *::after{box-sizing:border-box}
+.mft-calorie-calculator [hidden]{display:none!important}
+.mft-calorie-calculator h2,.mft-calorie-calculator h3,.mft-calorie-calculator h4,.mft-calorie-calculator p{margin:0}
+.mft-calorie-calculator .mft-sr-only,.mft-sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* header */
+.mft-calorie-calculator .mft-calculator-header{text-align:center;display:grid;gap:12px;justify-items:center}
+.mft-calorie-calculator .mft-eyebrow{display:inline-block;color:#ff4d57;font-weight:700;font-size:.92rem}
+.mft-calorie-calculator .mft-calculator-header h2{font-weight:800;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.35}
+.mft-calorie-calculator .mft-calculator-intro{max-width:640px;color:#d6d6db}
+.mft-calorie-calculator .mft-calculator-note{max-width:640px;padding:10px 16px;border-inline-start:3px solid var(--c-red);background:var(--c-panel);border-radius:8px;color:var(--c-mute);font-size:.93rem;text-align:start}
+
+/* form */
+.mft-calorie-calculator .mft-calculator-form{display:grid;gap:clamp(16px,2.5vw,24px)}
+.mft-calorie-calculator fieldset{min-width:0;margin:0;border:0;padding:0}
+.mft-calorie-calculator .mft-calculator-section{background:var(--c-panel);border:1px solid var(--c-line);border-radius:20px;padding:clamp(18px,3.5vw,32px)}
+.mft-calorie-calculator legend{padding:0;float:inline-start;width:100%}
+.mft-calorie-calculator legend+*{clear:both}
+.mft-calorie-calculator .mft-section-title{display:flex;align-items:center;gap:12px;font-weight:800;font-size:clamp(1.15rem,2.5vw,1.4rem);margin-bottom:6px}
+.mft-calorie-calculator .mft-step-number{display:inline-grid;place-items:center;min-width:40px;height:30px;padding:0 10px;border-radius:999px;background:var(--c-red);color:#fff;font:400 .95rem/1 'Anton',sans-serif;letter-spacing:.06em}
+.mft-calorie-calculator .mft-section-description{color:var(--c-mute);margin-bottom:20px;font-size:.96rem}
+.mft-calorie-calculator .mft-form-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){.mft-calorie-calculator .mft-form-grid{grid-template-columns:1fr 1fr}.mft-calorie-calculator .mft-form-field-full{grid-column:1/-1}}
+.mft-calorie-calculator .mft-form-field{display:grid;gap:8px;align-content:start;min-width:0}
+.mft-calorie-calculator .mft-form-field>label,.mft-calorie-calculator .mft-choice-group>legend{font-weight:700;font-size:.97rem;color:#f1f1f3}
+.mft-calorie-calculator .mft-choice-group>legend{margin-bottom:8px}
+.mft-calorie-calculator .mft-optional{color:var(--c-mute);font-weight:500;font-size:.85rem}
+.mft-calorie-calculator .mft-form-field small{color:var(--c-mute);font-size:.84rem;line-height:1.7}
+.mft-calorie-calculator .mft-form-field small.mft-error,.mft-calorie-calculator small.mft-error{color:var(--c-err);font-weight:600;font-size:.88rem}
+.mft-calorie-calculator small.mft-error::before{content:"! ";font-weight:800}
+.mft-calorie-calculator .mft-calculator-section>small.mft-error{display:block;margin-top:14px}
+
+/* inputs */
+.mft-calorie-calculator .mft-input-group{position:relative;display:flex;align-items:center}
+.mft-calorie-calculator .mft-input-group input[type=number]{width:100%;min-height:52px;padding:12px 16px;padding-inline-end:64px;border-radius:12px;border:1px solid var(--c-line2);background:#0a0a0a;color:#fff;font:600 1.05rem 'Cairo',sans-serif;transition:border-color .2s,box-shadow .2s;-moz-appearance:textfield}
+.mft-calorie-calculator .mft-input-group input::-webkit-outer-spin-button,.mft-calorie-calculator .mft-input-group input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.mft-calorie-calculator .mft-input-group input::placeholder{color:#76767e;font-weight:500}
+.mft-calorie-calculator .mft-input-group input:hover{border-color:rgba(255,255,255,.4)}
+.mft-calorie-calculator .mft-input-group input:focus{outline:0;border-color:var(--c-red);box-shadow:0 0 0 3px rgba(229,9,20,.28)}
+.mft-calorie-calculator .mft-input-group input[aria-invalid=true]{border-color:var(--c-err);box-shadow:0 0 0 3px rgba(255,107,107,.15)}
+.mft-calorie-calculator .mft-input-unit{position:absolute;inset-inline-end:16px;color:var(--c-mute);font-size:.9rem;pointer-events:none}
+
+/* segmented sex */
+.mft-calorie-calculator .mft-choice-group{border:0;padding:0;margin:0}
+.mft-calorie-calculator .mft-choice-options{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:1px solid var(--c-line2);border-radius:14px;background:#0a0a0a;max-width:420px}
+.mft-calorie-calculator .mft-choice-option{position:relative;display:block;cursor:pointer}
+.mft-calorie-calculator .mft-choice-option input,.mft-calorie-calculator .mft-activity-option input,.mft-calorie-calculator .mft-goal-option input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.mft-calorie-calculator .mft-choice-option span{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:10px;font-weight:700;color:#d6d6db;transition:background .2s,color .2s}
+.mft-calorie-calculator .mft-choice-option:hover span{background:rgba(255,255,255,.08)}
+.mft-calorie-calculator .mft-choice-option input:checked+span{background:var(--c-red);color:#fff}
+.mft-calorie-calculator .mft-choice-option input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+
+/* option cards */
+.mft-calorie-calculator .mft-activity-list{display:grid;gap:12px}
+.mft-calorie-calculator .mft-goal-list{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.mft-calorie-calculator .mft-goal-list{grid-template-columns:1fr 1fr}}
+.mft-calorie-calculator .mft-activity-option,.mft-calorie-calculator .mft-goal-option{position:relative;display:block;cursor:pointer}
+.mft-calorie-calculator .mft-activity-content,.mft-calorie-calculator .mft-goal-content{position:relative;display:grid;gap:4px;min-height:64px;height:100%;padding:16px 18px;padding-inline-start:58px;border:1px solid var(--c-line2);border-radius:14px;background:#0a0a0a;transition:border-color .2s,background .2s,transform .2s}
+.mft-calorie-calculator .mft-activity-content::before,.mft-calorie-calculator .mft-goal-content::before{content:"";position:absolute;inset-inline-start:18px;top:20px;width:22px;height:22px;border-radius:50%;border:2px solid #7d7d85;background:transparent;transition:border-color .2s,box-shadow .2s,background .2s}
+.mft-calorie-calculator .mft-activity-content strong,.mft-calorie-calculator .mft-goal-content strong{font-size:1.05rem;font-weight:800;line-height:1.5}
+.mft-calorie-calculator .mft-activity-content small,.mft-calorie-calculator .mft-goal-content small{color:var(--c-mute);font-size:.9rem;line-height:1.75}
+.mft-calorie-calculator .mft-activity-option:hover .mft-activity-content,.mft-calorie-calculator .mft-goal-option:hover .mft-goal-content{border-color:rgba(255,255,255,.45);background:#0f0f0f}
+.mft-calorie-calculator .mft-activity-option input:checked+.mft-activity-content,.mft-calorie-calculator .mft-goal-option input:checked+.mft-goal-content{border-color:var(--c-red);background:var(--c-red-soft)}
+.mft-calorie-calculator .mft-activity-option input:checked+.mft-activity-content::before,.mft-calorie-calculator .mft-goal-option input:checked+.mft-goal-content::before{border-color:var(--c-red);background:var(--c-red);box-shadow:inset 0 0 0 4px #0a0a0a}
+.mft-calorie-calculator .mft-activity-option input:focus-visible+.mft-activity-content,.mft-calorie-calculator .mft-goal-option input:focus-visible+.mft-goal-content{outline:2px solid #fff;outline-offset:3px}
+
+/* method note */
+.mft-calorie-calculator .mft-method-note{padding:18px 20px;border:1px dashed var(--c-line2);border-radius:14px;color:var(--c-mute);font-size:.92rem}
+.mft-calorie-calculator .mft-method-note strong{display:block;color:#fff;margin-bottom:4px}
+
+/* buttons */
+.mft-calorie-calculator .mft-primary-button,.mft-calorie-calculator .mft-secondary-button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:12px 30px;border-radius:999px;font:800 1.05rem 'Cairo',sans-serif;text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s,border-color .25s}
+.mft-calorie-calculator .mft-primary-button{background:var(--c-red);border:2px solid var(--c-red);color:#fff}
+.mft-calorie-calculator .mft-primary-button:hover{background:#c40812;border-color:#c40812;transform:translateY(-2px);box-shadow:0 12px 28px rgba(229,9,20,.35)}
+.mft-calorie-calculator .mft-secondary-button{background:transparent;border:2px solid var(--c-line2);color:#fff}
+.mft-calorie-calculator .mft-secondary-button:hover{border-color:#fff;transform:translateY(-2px)}
+.mft-calorie-calculator .mft-primary-button:focus-visible,.mft-calorie-calculator .mft-secondary-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.mft-calorie-calculator .mft-calculator-actions{display:flex}
+.mft-calorie-calculator .mft-calculator-actions .mft-primary-button{width:100%}
+@media(min-width:640px){.mft-calorie-calculator .mft-calculator-actions .mft-primary-button{width:auto;min-width:300px}}
+
+/* results */
+.mft-calorie-calculator .mft-results{display:grid;gap:clamp(18px,3vw,28px);scroll-margin-top:90px}
+.mft-calorie-calculator .mft-results-header{display:grid;gap:6px;text-align:center}
+.mft-calorie-calculator .mft-results-header h2{font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)}
+.mft-calorie-calculator .mft-results-header h2:focus{outline:0}
+.mft-calorie-calculator .mft-results-header p{color:var(--c-mute)}
+.mft-calorie-calculator .mft-main-result{position:relative;overflow:hidden;text-align:center;padding:clamp(26px,5vw,48px) clamp(18px,4vw,40px);border-radius:24px;border:1px solid var(--c-line2);border-top:4px solid var(--c-red);background:radial-gradient(70% 90% at 50% 0,rgba(229,9,20,.18),transparent 70%),linear-gradient(180deg,#181818,#0e0e0e)}
+.mft-calorie-calculator .mft-result-label{display:block;color:#d6d6db;font-weight:700;font-size:1.02rem}
+.mft-calorie-calculator .mft-main-result-value{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 14px;margin:10px 0 8px}
+.mft-calorie-calculator .mft-main-result-value output{font:400 clamp(4.2rem,16vw,7.5rem)/1 'Anton',sans-serif;letter-spacing:.02em;color:#fff;direction:ltr;unicode-bidi:isolate}
+.mft-calorie-calculator .mft-main-result-value span{color:var(--c-red);font-weight:800;font-size:clamp(1.1rem,3vw,1.5rem)}
+.mft-calorie-calculator .mft-result-caption{color:var(--c-mute);max-width:520px;margin:0 auto;font-size:.95rem}
+.mft-calorie-calculator .mft-alert{padding:14px 18px;border-radius:12px;border:1px solid rgba(255,107,107,.5);background:rgba(255,107,107,.08);color:#ffd3d3;font-size:.94rem}
+
+.mft-calorie-calculator .mft-results-grid,.mft-calorie-calculator .mft-macro-grid,.mft-calorie-calculator .mft-guide-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:800px){.mft-calorie-calculator .mft-results-grid,.mft-calorie-calculator .mft-macro-grid,.mft-calorie-calculator .mft-guide-grid{grid-template-columns:repeat(3,1fr)}}
+.mft-calorie-calculator .mft-result-card,.mft-calorie-calculator .mft-macro-card,.mft-calorie-calculator .mft-guide-card{display:grid;gap:8px;align-content:start;padding:20px;border:1px solid var(--c-line);border-radius:16px;background:var(--c-panel)}
+.mft-calorie-calculator .mft-result-card-label{color:var(--c-mute);font-weight:700;font-size:.92rem}
+.mft-calorie-calculator .mft-result-card>strong{font:800 1.5rem/1.3 'Cairo',sans-serif}
+.mft-calorie-calculator .mft-result-card>strong output{font:400 2.2rem/1.1 'Anton',sans-serif;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+.mft-calorie-calculator .mft-result-card>strong small{color:var(--c-mute);font:500 .85rem 'Cairo',sans-serif}
+.mft-calorie-calculator .mft-result-card p,.mft-calorie-calculator .mft-macro-card p,.mft-calorie-calculator .mft-guide-card p{color:var(--c-mute);font-size:.9rem;line-height:1.8}
+
+.mft-calorie-calculator .mft-subsection-header{display:grid;gap:4px;margin-bottom:14px}
+.mft-calorie-calculator .mft-subsection-header h3{font-weight:800;font-size:clamp(1.25rem,3vw,1.6rem)}
+.mft-calorie-calculator .mft-subsection-header p{color:var(--c-mute);font-size:.95rem}
+.mft-calorie-calculator .mft-macro-header{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.mft-calorie-calculator .mft-macro-header>span{font-weight:800;font-size:1.05rem}
+.mft-calorie-calculator .mft-macro-header strong{font:400 1.7rem/1 'Anton',sans-serif;letter-spacing:.02em}
+.mft-calorie-calculator .mft-macro-header strong output{direction:ltr;unicode-bidi:isolate}
+.mft-calorie-calculator .mft-macro-header strong{font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem}
+.mft-calorie-calculator .mft-macro-header strong output{font:400 1.8rem/1 'Anton',sans-serif}
+.mft-calorie-calculator .mft-progress{height:10px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.mft-calorie-calculator .mft-progress span{display:block;height:100%;width:0;border-radius:999px;background:var(--c-red);transition:width .7s cubic-bezier(.2,.7,.2,1)}
+.mft-calorie-calculator .mft-macro-share{color:#d6d6db;font-size:.85rem;font-weight:600}
+.mft-calorie-calculator .mft-guide-card h4{font:400 1.4rem/1.2 'Anton',sans-serif;letter-spacing:.04em;color:#fff}
+.mft-calorie-calculator .mft-guide-card:nth-child(3) h4{font:800 1.15rem 'Cairo',sans-serif;letter-spacing:0}
+
+.mft-calorie-calculator .mft-smart-guidance{padding:clamp(20px,4vw,32px);border-radius:18px;background:var(--c-panel2);border:1px solid var(--c-line);border-inline-start:4px solid var(--c-red)}
+.mft-calorie-calculator .mft-smart-guidance h3{font-weight:800;font-size:1.3rem;margin-bottom:8px}
+.mft-calorie-calculator .mft-smart-guidance p{color:#d6d6db}
+.mft-calorie-calculator .mft-smart-guidance ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.mft-calorie-calculator .mft-smart-guidance li{position:relative;padding-inline-start:22px;color:#d6d6db;font-size:.95rem}
+.mft-calorie-calculator .mft-smart-guidance li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--c-red)}
+
+.mft-calorie-calculator .mft-cta{display:grid;gap:10px;justify-items:center;text-align:center;padding:clamp(28px,5vw,48px) clamp(18px,4vw,40px);border-radius:24px;border:1px solid var(--c-line2);background:radial-gradient(80% 120% at 50% 100%,rgba(229,9,20,.16),transparent 70%),#0d0d0d}
+.mft-calorie-calculator .mft-cta h3{font-weight:800;font-size:clamp(1.4rem,3.5vw,2rem);line-height:1.5}
+.mft-calorie-calculator .mft-cta p{max-width:620px;color:#d6d6db}
+.mft-calorie-calculator .mft-cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:10px;width:100%}
+@media(max-width:560px){.mft-calorie-calculator .mft-cta-actions>a{width:100%}}
+
+/* disclaimer */
+.mft-calorie-calculator .mft-disclaimer{display:grid;gap:10px;padding:clamp(18px,3.5vw,28px);border-radius:16px;border:1px solid var(--c-line);background:#0b0b0b;color:var(--c-mute);font-size:.88rem}
+.mft-calorie-calculator .mft-disclaimer h3{color:#fff;font-weight:800;font-size:1.05rem}
+
+@media(prefers-reduced-motion:reduce){.mft-calorie-calculator *{transition:none!important}}
+
+/* overrides for inherited page-level label styles (.cl label) */
+.mft-calorie-calculator .mft-form-field>label{display:block;gap:0}
+.mft-calorie-calculator .mft-choice-option,.mft-calorie-calculator .mft-activity-option,.mft-calorie-calculator .mft-goal-option{display:block;gap:0;font-weight:400;font-size:1rem;color:#fff}
+.mft-calorie-calculator .mft-activity-content small,.mft-calorie-calculator .mft-goal-content small{font-weight:400}
+
+/* ===== v2: wide desktop layout + visual polish ===== */
+.mft-calorie-calculator{max-width:1200px}
+.mft-calorie-calculator .mft-calculator-header,.mft-calorie-calculator .mft-results,.mft-calorie-calculator .mft-disclaimer{width:100%;max-width:960px;margin-inline:auto}
+.mft-calorie-calculator .mft-calculator-header{padding-bottom:6px}
+.mft-calorie-calculator .mft-calculator-header h2{letter-spacing:-.01em}
+
+/* cards: subtle depth + red accent line */
+.mft-calorie-calculator .mft-calculator-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#141414,#0f0f0f);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.mft-calorie-calculator .mft-calculator-section::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:linear-gradient(90deg,var(--c-red),transparent 70%)}
+.mft-calorie-calculator .mft-section-title{padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--c-line)}
+.mft-calorie-calculator .mft-section-description{margin-top:0}
+.mft-calorie-calculator .mft-activity-content,.mft-calorie-calculator .mft-goal-content{background:#0b0b0b}
+.mft-calorie-calculator .mft-activity-option:hover .mft-activity-content,.mft-calorie-calculator .mft-goal-option:hover .mft-goal-content{transform:translateY(-1px)}
+.mft-calorie-calculator .mft-result-card,.mft-calorie-calculator .mft-macro-card,.mft-calorie-calculator .mft-guide-card{background:linear-gradient(180deg,#141414,#0f0f0f)}
+.mft-calorie-calculator .mft-method-note{background:#0c0c0c;border-style:solid;border-color:var(--c-line)}
+
+/* desktop: sections 01 + 02 side by side */
+@media(min-width:1024px){
+ .mft-calorie-calculator .mft-calculator-form{grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+ .mft-calorie-calculator .mft-calculator-form>.mft-calculator-section{display:flex;flex-direction:column}
+ .mft-calorie-calculator .mft-calculator-form>.mft-calculator-section::after{content:"";display:block;clear:both}
+ .mft-calorie-calculator .mft-calculator-form>.mft-calculator-section:nth-of-type(3){grid-column:1/-1}
+ .mft-calorie-calculator .mft-calculator-form>.mft-calculator-section .mft-form-grid{flex:1;align-content:start;row-gap:26px}
+ .mft-calorie-calculator .mft-calculator-form>.mft-calculator-section .mft-activity-list{flex:1;grid-auto-rows:1fr}
+ .mft-calorie-calculator .mft-activity-content{min-height:0;padding-block:12px}
+ .mft-calorie-calculator .mft-activity-content::before{top:16px}
+ .mft-calorie-calculator .mft-activity-content small{font-size:.86rem;line-height:1.65}
+ .mft-calorie-calculator .mft-method-note{align-self:center}
+ .mft-calorie-calculator .mft-calculator-actions{justify-content:flex-end;align-self:center}
+ .mft-calorie-calculator .mft-calculator-actions .mft-primary-button{width:100%;min-width:0}
+}
+@media(min-width:1100px){.mft-calorie-calculator .mft-goal-list{grid-template-columns:repeat(4,1fr)}}
