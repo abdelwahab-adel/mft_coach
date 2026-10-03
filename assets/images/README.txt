@@ -8,3 +8,5 @@ about/team-1.jpg ... team-4.jpg  3:4 portraits (silhouette shows until added)
 about/story-1..3.jpg are crops of hero-bg.jpg - replace with real photos.
 
 Unsplash photos (men only) are hotlinked from images.unsplash.com in css/polish.css - local files in programs/ and instagram/ override them.
+coaching/1.jpg ... coaching/6.jpg   ~1000x1100   Online Coaching section cards (see coaching/README.txt)
+method/1.jpg ... method/4.jpg       3:4          MFT methodology cards
