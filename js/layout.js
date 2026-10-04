@@ -122,9 +122,9 @@
         <ul class="links">
        
 <li><a href="index.html"${c("home")}>الرئيسية</a></li>
-<li><a href="index.html#programs">البرامج</a></li>
+<li><a href="index.html#programs">برامجنا</a></li>
 <li><a href="calculator.html"${c("calculator")}>حاسبة السعرات الحرارية</a></li>
-<li><a href="transformations.html"${c("transformations")}>التحولات</a></li>
+<li><a href="transformations.html"${c("transformations")}>قصص التحول</a></li>
 <li><a href="articles.html"${c("articles")}>المقالات</a></li>
 <li><a href="index.html#pricing">العضوية</a></li>
 <li><a href="about.html"${c("about")}>من نحن</a></li>
@@ -169,16 +169,13 @@
 const COLS = [
     ["روابط سريعة", [
       ["الرئيسية", "index.html"],
-      ["عن MFT", "about.html"],
       ["برامجنا", "index.html#programs"],
       ["قصص التحول", "transformations.html"],
-      ["الاشتراكات والأسعار", "index.html#pricing"],
       ["تواصل معنا", "index.html#contact"],
     ]],
     ["ابدأ رحلتك", [
       ["حاسبة السعرات", "calculator.html"],
       ["مقالات ونصائح", "articles.html"],
-      ["نتائج وتجارب عملائنا", "index.html#results"],
       ["كيف تبدأ رحلتك؟", "index.html#steps"],
       ["الحياة مع MFT", "index.html#life"],
       ["الأسئلة الشائعة", "index.html#faq"],

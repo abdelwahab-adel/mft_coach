@@ -659,7 +659,7 @@ h1 .r {
   padding: 0;
   display: grid;
   gap: 44px 24px;
-  grid-template-columns: 1fr;
+ grid-template-columns: repeat(2, 1fr);
     direction: rtl;
 
 }
@@ -3122,9 +3122,19 @@ body.pg {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(../assets/images/hero-bg.jpg) 78% 8% / cover;
+  background: url(../assets/images/moooh.jpg) 78% 8% / cover;
   filter: grayscale(1) contrast(1.15) brightness(0.85);
 }
+
+@media (max-width: 600px) {
+:where(body.pg) .dh-banner::before {
+  
+  background: url(../assets/images/mooohs.jpg) 78% 8% / cover;
+}
+
+
+}
+
 :where(body.pg) .dh-banner::after {
   content: "";
   position: absolute;
