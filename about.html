@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
+      <script src="js/layout.js"></script>
   </head>
   <body class="pg p-about">
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -77,512 +78,387 @@
         </symbol>
       </defs>
     </svg>
-    <header class="ab-hero">
-      <nav class="nav" aria-label="Main">
-        <a
-          class="logo"
-          href="index.html"
-          aria-label="MFT – Medical Fitness Transformation, home"
-        >
-          <img
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="88"
-            height="88"
-          />
-        </a>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="sub" href="index.html#programs">Programs</a></li>
-          <li><a href="calculator.html">Calorie Calculator</a></li>
-          <li><a href="transformations.html">Transformations</a></li>
-          <li><a href="articles.html">Articles</a></li>
-          <li><a class="sub" href="index.html#pricing">Membership</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-        </ul>
-        <a
-          class="pill"
-          href="https://wa.me/201155822360"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="long">Book a consultation</span>
-          <span class="short">Book</span>
-          <span class="dot"
-            ><svg aria-hidden="true"><use href="#arr" /></svg
-          ></span>
-        </a>
-        <button class="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            <path
-              d="M0 1h20M0 7h20M0 13h20"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </nav>
-      <div class="ab-tags" dir="ltr">
-        <p>ASSESS <i>/</i> FUEL <i>/</i> TRAIN <i>/</i> SUSTAIN</p>
-        <span class="ab-dots"></span>
-      </div>
-      <img
-        class="lg"
-        src="assets/images/logo.jpg"
-        alt="MFT – Medical Fitness Transformation"
-        width="210"
-        height="210"
-      />
-      <div class="ab-r" dir="ltr">
-        <p>BETTER HEALTH.<br />STRONGER BODY.<br />GREATER YOU.</p>
-        <span></span>
-      </div>
+    <header class="phead">
+      <site-nav current="about"></site-nav>
+     
+     
+      
     </header>
     <main>
-      <section class="ab-mft" aria-labelledby="h-mft">
-        <div class="ab-wrap">
-          <div class="ab-txt rv" lang="ar" dir="rtl">
-            <p class="ab-lbl">من نحن</p>
-            <h2 class="big it" id="h-mft" lang="en">MFT</h2>
-            <p>
+      <section class="sec light" id="about" aria-labelledby="h-about">
+        <div class="wrap sgrid">
+          <div class="stack rv">
+            <img
+              class="s1"
+              src="https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80"
+              alt="رياضي في الصالة"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'assets/images/about/story-1.jpg';
+              "
+            /><img
+              class="s2"
+              src="https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80"
+              alt="تمرين رفع الأثقال"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'assets/images/about/story-2.jpg';
+              "
+            /><img
+              class="s3"
+              src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80"
+              alt="لاعب كمال أجسام"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'assets/images/about/story-3.jpg';
+              "
+            />
+          </div>
+          <div>
+            <div class="lrow rv"><span class="lbl" lang="ar">من نحن</span></div>
+            <h2 class="ttl rv" id="h-about" lang="ar" dir="rtl">
+              أكثر من <em>مجرد تدريب</em>
+            </h2>
+            <p class="ap rv" lang="ar" dir="rtl">
               MFT هي منظومة متكاملة تهدف إلى مساعدة الأشخاص على بناء جسم أقوى
               وحياة أكثر صحة من خلال الجمع بين التدريب الرياضي، التغذية المخصصة،
               التقييم الصحي، والمتابعة المستمرة.
             </p>
-            <p>
+            <p class="ap rv" lang="ar" dir="rtl">
               نحن لا نؤمن بوجود خطة واحدة تناسب الجميع. كل شخص لديه أهداف
               مختلفة، وروتين مختلف، ومستوى مختلف من التدريب، واحتياجات صحية
               مختلفة.
             </p>
-            <p>
+            <p class="ap rv" lang="ar" dir="rtl">
               لهذا تبدأ رحلة MFT بفهم الشخص أولًا، ثم بناء خطة تناسبه، ومتابعة
               تطوره وإجراء التعديلات اللازمة خلال الرحلة.
             </p>
-            <span class="ab-line"></span
-            ><a class="ab-link" href="doctor.html">تعرف على د. محمد الريس</a>
-          </div>
-          <div>
-            <p class="ab-cap" lang="ar" dir="rtl">
-              رحلة التحول — من نقطة البداية إلى نتيجة مستدامة
+            <p class="sig rv" lang="ar" dir="rtl">
+              <a class="ab-link" href="doctor.html">تعرف على د. محمد الريس</a
+              ><span>Founder &amp; Medical Fitness Director</span>
             </p>
-            <div class="ab-cards">
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#user" /></svg
-                ></span>
-                <div>
-                  <b>افهم</b>
-                  <p>اعرف أين أنت الآن.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#target" /></svg
-                ></span>
-                <div>
-                  <b>قيّم</b>
-                  <p>حدد احتياجاتك وأهدافك.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#list" /></svg
-                ></span>
-                <div>
-                  <b>خطط</b>
-                  <p>ابنِ برنامجك الخاص.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#dumb" /></svg
-                ></span>
-                <div>
-                  <b>نفذ</b>
-                  <p>ابدأ التدريب والتغذية.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#bars" /></svg
-                ></span>
-                <div>
-                  <b>راقب</b>
-                  <p>تابع تقدمك باستمرار.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#trend" /></svg
-                ></span>
-                <div>
-                  <b>عدّل</b>
-                  <p>طور الخطة عندما تحتاج إلى ذلك.</p>
-                </div>
-              </div>
-              <div class="ab-c rv" lang="ar" dir="rtl">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#pulse" /></svg
-                ></span>
-                <div>
-                  <b>تحول</b>
-                  <p>حقق هدفك وابنِ أسلوب حياة جديدًا.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-      <section class="ab-why" aria-labelledby="h-why">
+      <section class="ab-mft ab-bel" aria-labelledby="h-why">
         <div class="ab-wrap">
-          <div
-            class="ab-circ rv"
-            role="img"
-            aria-label="رياضي أثناء التدريب"
-            style="
-              background-image:
-                url(https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80),
-                url(assets/images/why.jpg);
-            "
-          ></div>
-          <div lang="ar" dir="rtl">
-            <p class="ab-lbl rv">فلسفة MFT</p>
-            <h2 class="it rv" id="h-why">ما نؤمن به</h2>
-            <div class="ab-feat">
-              <div class="ab-f rv">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#flask" /></svg
-                ></span>
-                <h3>العلم قبل العشوائية</h3>
-                <p>
-                  الاعتماد على المعرفة والتقييم بدل التخمين والبرامج العشوائية.
-                </p>
-              </div>
-              <div class="ab-f rv">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#user" /></svg
-                ></span>
-                <h3>الفرد قبل الخطة</h3>
-                <p>
-                  الخطة يجب أن تناسب الشخص، وليس أن يحاول الشخص التكيف مع خطة
-                  جاهزة.
-                </p>
-              </div>
-              <div class="ab-f rv">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#pulse" /></svg
-                ></span>
-                <h3>الصحة قبل الشكل</h3>
-                <p>
-                  الشكل جزء من النتيجة، لكن الصحة والأداء والاستمرارية عناصر
-                  أساسية في الرحلة.
-                </p>
-              </div>
-              <div class="ab-f rv">
-                <span class="ab-ic"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#shield" /></svg
-                ></span>
-                <h3>الاستمرارية قبل المثالية</h3>
-                <p>
-                  البرنامج الناجح هو البرنامج الذي يستطيع العميل الالتزام به
-                  والاستمرار عليه.
-                </p>
-              </div>
-            </div>
+          <figure class="abm-photo rv">
+            <img src="assets/images/coaching/2.jpg" alt="رياضي أثناء التدريب" width="1000" height="1100" loading="lazy" />
+          </figure>
+          <div class="abm-txt rv" lang="ar" dir="rtl">
+            <p class="abm-lbl">فلسفة MFT</p>
+            <h2 class="abm-h" id="h-why">ما <span class="r">نؤمن به</span></h2>
+            <ol class="abm-list">
+              <li>
+                <b>01. العلم قبل العشوائية</b>
+                <p>الاعتماد على المعرفة والتقييم بدل التخمين والبرامج العشوائية.</p>
+              </li>
+              <li>
+                <b>02. الفرد قبل الخطة</b>
+                <p>الخطة يجب أن تناسب الشخص، وليس أن يحاول الشخص التكيف مع خطة جاهزة.</p>
+              </li>
+              <li>
+                <b>03. الصحة قبل الشكل</b>
+                <p>الشكل جزء من النتيجة، لكن الصحة والأداء والاستمرارية عناصر أساسية في الرحلة.</p>
+              </li>
+              <li>
+                <b>04. الاستمرارية قبل المثالية</b>
+                <p>البرنامج الناجح هو البرنامج الذي يستطيع العميل الالتزام به والاستمرار عليه.</p>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
-      <section class="ab-prog" aria-labelledby="h-pg" lang="ar" dir="rtl">
-        <div class="ab-wrap">
-          <p class="ab-lbl rv">البرامج</p>
-          <h2 class="it rv" id="h-pg">برامج صممت من أجلك</h2>
-          <div class="ab-pg">
-            <a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
+       
+    </main>
+
+    <section
+        class="sec dark ctr"
+        id="programs"
+        style="background: var(--bg-dark-2)"
+        aria-labelledby="h-programs"
+      >
+        <div class="wrap">
+          <h2 class="ttl rv" id="h-programs" lang="ar" dir="rtl">
+            برامج <em>صممت من أجلك</em>
+          </h2>
+          <p class="ap rv ctr2" lang="ar" dir="rtl">
+            كل برنامج يُبنى بعد تقييم أولي لهدفك ومستواك وروتينك، ويشمل خطة
+            تدريب وتغذية، ومتابعة وتعديلًا مستمرين خلال الرحلة.
+          </p>
+          <ul class="progs" style="list-style: none; padding: 0">
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #5a1d14, #141414)"
                 role="img"
                 aria-label="إنقاص الوزن وإدارة تركيب الجسم"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1634492859027-11de47469325?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
+              >
+                <span class="pg-no">01</span
+                ><span class="pg-kind">Weight Management</span>
+              </div>
+              <h3>إنقاص الوزن وإدارة تركيب الجسم</h3>
+              <p class="pg-desc">
+                برنامج يركز على تحسين الوزن وتركيب الجسم من خلال التغذية
+                والتدريب والمتابعة.
+              </p>
+              <dl class="pg-info">
                 <div>
-                  <h3>إنقاص الوزن وإدارة تركيب الجسم</h3>
-                  <p>
-                    برنامج يركز على تحسين الوزن وتركيب الجسم من خلال التغذية
-                    والتدريب والمتابعة.
-                  </p>
+                  <dt>مناسب لـ</dt>
+                  <dd>
+                    من يريد خفض الوزن ونسبة الدهون بطريقة منظمة وقابلة
+                    للاستمرار.
+                  </dd>
                 </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div></a
-            ><a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
-                role="img"
-                aria-label="بناء العضلات"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
                 <div>
-                  <h3>بناء العضلات</h3>
-                  <p>
-                    برنامج مخصص لمن يهدف إلى تطوير الكتلة العضلية وتحسين القوة
-                    والأداء.
-                  </p>
+                  <dt>التركيز</dt>
+                  <dd>
+                    توازن السعرات، الحفاظ على الكتلة العضلية، والالتزام بالنظام.
+                  </dd>
                 </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div></a
-            ><a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
-                role="img"
-                aria-label="القوة والتحمل"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
-                <div>
-                  <h3>القوة والتحمل</h3>
-                  <p>برنامج لتطوير القوة والتحمل وتحسين الأداء البدني.</p>
-                </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div></a
-            ><a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
-                role="img"
-                aria-label="تحسين اللياقة"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
-                <div>
-                  <h3>تحسين اللياقة</h3>
-                  <p>برنامج يركز على تطوير اللياقة والحركة والقدرة البدنية.</p>
-                </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div></a
-            ><a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
-                role="img"
-                aria-label="تحول نمط الحياة"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
-                <div>
-                  <h3>تحول نمط الحياة</h3>
-                  <p>برنامج يركز على بناء عادات يومية أكثر صحة وتنظيمًا.</p>
-                </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div></a
-            ><a
-              class="ab-p rv"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              ><div
-                class="im"
-                role="img"
-                aria-label="التعافي وإعادة التأهيل"
-                style="
-                  background-image: url(https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80);
-                "
-              ></div>
-              <div class="row">
-                <div>
-                  <h3>التعافي وإعادة التأهيل</h3>
-                  <p>
-                    برنامج يركز على الحركة والتعافي وفق الاحتياجات المناسبة
-                    للحالة.
-                  </p>
-                </div>
-                <span class="ab-go"
-                  ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <use href="#go" /></svg
-                ></span></div
-            ></a>
-          </div>
-        </div>
-      </section>
-      <section
-        class="ab-cta"
-        aria-labelledby="h-cta"
-        style="
-          background-image:
-            linear-gradient(
-              90deg,
-              #050506 22%,
-              rgba(5, 6, 6, 0.6) 68%,
-              rgba(5, 6, 6, 0.25)
-            ),
-            url(https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80);
-        "
-      >
-        <div class="ab-wrap">
-          <div class="ab-ct" lang="ar" dir="rtl">
-            <p class="ab-lbl rv">ابدأ رحلتك</p>
-            <h2 class="it rv" id="h-cta">هل أنت مستعد لتحولك؟</h2>
-            <p class="rv">
-              ابدأ رحلتك مع MFT اليوم، وابنِ جسمًا أقوى وعادات أفضل ونظامًا
-              صحيًا تستطيع الاستمرار عليه.
-            </p>
-            <a
-              class="btn solid"
-              lang="ar"
-              href="https://wa.me/201155822360"
-              target="_blank"
-              rel="noopener"
-              >احجز استشارتك
-              <span class="a"
-                ><svg aria-hidden="true"><use href="#arr" /></svg></span
-            ></a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="ft" aria-label="Footer">
-      <div class="fg">
-        <div>
-          <img
-            class="flogo"
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="110"
-            height="110"
-            loading="lazy"
-          />
-          <p
-            class="ap"
-            lang="ar"
-            dir="rtl"
-            style="margin-top: 14px; font-size: 0.95rem"
-          >
-            نساعدك على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
-          </p>
-          <p class="slog" dir="ltr">
-            Better Health. Stronger Body. Greater You.
-          </p>
-          <p class="ap" lang="ar" dir="rtl" style="font-size: 0.9rem">
-            <b style="color: #fff">د. محمد الريس</b><br />Founder &amp; Medical
-            Fitness Director
-          </p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#programs">Programs</a></li>
-            <li><a href="transformations.html">Transformations</a></li>
-            <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>About</h3>
-          <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="index.html#coaching">Online Coaching</a></li>
-            <li><a href="index.html#method">Methodology</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Support</h3>
-          <ul>
-            <li>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>خطة تغذية</li>
+                <li>تدريب مخصص</li>
+                <li>متابعة التقدم</li>
+                <li>تعديلات مستمرة</li>
+              </ul>
               <a
-                href="https://wa.me/201155822360"
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%A5%D9%86%D9%82%D8%A7%D8%B5%20%D8%A7%D9%84%D9%88%D8%B2%D9%86%20%D9%88%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%AA%D8%B1%D9%83%D9%8A%D8%A8%20%D8%A7%D9%84%D8%AC%D8%B3%D9%85"
                 target="_blank"
                 rel="noopener"
-                >WhatsApp</a
-              >
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
             </li>
-            <li><a href="tel:+201155822360">+20 11 55822360</a></li>
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #3b2a1a, #121212)"
+                role="img"
+                aria-label="بناء العضلات"
+              >
+                <span class="pg-no">02</span
+                ><span class="pg-kind">Muscle Building</span>
+              </div>
+              <h3>بناء العضلات</h3>
+              <p class="pg-desc">
+                برنامج مخصص لمن يهدف إلى تطوير الكتلة العضلية وتحسين القوة
+                والأداء.
+              </p>
+              <dl class="pg-info">
+                <div>
+                  <dt>مناسب لـ</dt>
+                  <dd>من يريد زيادة الكتلة العضلية ورفع مستوى القوة.</dd>
+                </div>
+                <div>
+                  <dt>التركيز</dt>
+                  <dd>
+                    زيادة الأحمال تدريجيًا، تغذية داعمة للنمو، وتعافٍ كافٍ بين
+                    الحصص.
+                  </dd>
+                </div>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>برنامج تدريب</li>
+                <li>خطة تغذية</li>
+                <li>Progressive Overload</li>
+                <li>متابعة النمو والتقدم</li>
+              </ul>
+              <a
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B9%D8%B6%D9%84%D8%A7%D8%AA"
+                target="_blank"
+                rel="noopener"
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
+            </li>
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #1f2a3a, #121212)"
+                role="img"
+                aria-label="القوة والتحمل"
+              >
+                <span class="pg-no">03</span
+                ><span class="pg-kind">Strength & Endurance</span>
+              </div>
+              <h3>القوة والتحمل</h3>
+              <p class="pg-desc">
+                برنامج لتطوير القوة والتحمل وتحسين الأداء البدني.
+              </p>
+              <dl class="pg-info">
+                <div>
+                  <dt>مناسب لـ</dt>
+                  <dd>
+                    من يريد رفع قدرته على الأداء والتحمل في التمرين والحياة
+                    اليومية.
+                  </dd>
+                </div>
+                <div>
+                  <dt>التركيز</dt>
+                  <dd>
+                    بناء القوة تدريجيًا وتحسين التحمل مع تنظيم الحمل التدريبي.
+                  </dd>
+                </div>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>تدريبات القوة</li>
+                <li>تمارين التحمل</li>
+                <li>تنظيم الحمل التدريبي</li>
+                <li>متابعة الأداء</li>
+              </ul>
+              <a
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%A7%D9%84%D9%82%D9%88%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D8%AD%D9%85%D9%84"
+                target="_blank"
+                rel="noopener"
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
+            </li>
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #4a1515, #101010)"
+                role="img"
+                aria-label="تحسين اللياقة"
+              >
+                <span class="pg-no">04</span
+                ><span class="pg-kind">Fitness</span>
+              </div>
+              <h3>تحسين اللياقة</h3>
+              <p class="pg-desc">
+                برنامج يركز على تطوير اللياقة والحركة والقدرة البدنية.
+              </p>
+              <dl class="pg-info">
+                <div>
+                  <dt>مناسب لـ</dt>
+                  <dd>المبتدئين ومن يعودون للتمرين بعد فترة انقطاع.</dd>
+                </div>
+                <div>
+                  <dt>التركيز</dt>
+                  <dd>
+                    الحركة، القدرة البدنية، وبناء أساس ثابت يمكن البناء عليه.
+                  </dd>
+                </div>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>تدريب مخصص</li>
+                <li>تطوير اللياقة</li>
+                <li>تحسين الحركة</li>
+                <li>متابعة التقدم</li>
+              </ul>
+              <a
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%AA%D8%AD%D8%B3%D9%8A%D9%86%20%D8%A7%D9%84%D9%84%D9%8A%D8%A7%D9%82%D8%A9"
+                target="_blank"
+                rel="noopener"
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
+            </li>
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #2e2418, #121212)"
+                role="img"
+                aria-label="تحول نمط الحياة"
+              >
+                <span class="pg-no">05</span
+                ><span class="pg-kind">Lifestyle</span>
+              </div>
+              <h3>تحول نمط الحياة</h3>
+              <p class="pg-desc">
+                برنامج يركز على بناء عادات يومية أكثر صحة وتنظيمًا.
+              </p>
+              <dl class="pg-info">
+                <div>
+                  <dt>مناسب لـ</dt>
+                  <dd>
+                    من يريد تغيير روتينه اليومي بعادات صحية يستطيع الاستمرار
+                    عليها.
+                  </dd>
+                </div>
+                <div>
+                  <dt>التركيز</dt>
+                  <dd>النوم، النشاط اليومي، التغذية، وإدارة التوتر.</dd>
+                </div>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>التغذية</li>
+                <li>النشاط</li>
+                <li>النوم</li>
+                <li>التعافي</li>
+                <li>المتابعة</li>
+              </ul>
+              <a
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%AA%D8%AD%D9%88%D9%84%20%D9%86%D9%85%D8%B7%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9"
+                target="_blank"
+                rel="noopener"
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
+            </li>
+            <li class="card d prog rv" lang="ar" dir="rtl">
+              <div
+                class="thumb"
+                style="--g: linear-gradient(135deg, #3a1a2a, #111)"
+                role="img"
+                aria-label="التعافي وإعادة التأهيل"
+              >
+                <span class="pg-no">06</span
+                ><span class="pg-kind">Recovery & Rehab</span>
+              </div>
+              <h3>التعافي وإعادة التأهيل</h3>
+              <p class="pg-desc">
+                برنامج يركز على الحركة والتعافي وفق الاحتياجات المناسبة للحالة.
+              </p>
+              <dl class="pg-info">
+                <div>
+                  <dt>مناسب لـ</dt>
+                  <dd>
+                    من لديه احتياجات حركية أو يعود للتمرين بعد فترة تعافٍ.
+                  </dd>
+                </div>
+                <div>
+                  <dt>التركيز</dt>
+                  <dd>
+                    الحركة الآمنة والتدرج، ويُحدَّد المناسب بعد تقييم الحالة.
+                  </dd>
+                </div>
+              </dl>
+              <span class="pg-lbl">يشمل</span>
+              <ul class="chips">
+                <li>تقييم الاحتياجات</li>
+                <li>تمارين مناسبة</li>
+                <li>متابعة الحركة</li>
+                <li>تطوير القدرة الوظيفية</li>
+              </ul>
+              <a
+                class="pg-link"
+                href="https://wa.me/201155822360?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20MFT%20%F0%9F%91%8B%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%20%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%81%D9%8A%20%D9%88%D8%A5%D8%B9%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A3%D9%87%D9%8A%D9%84"
+                target="_blank"
+                rel="noopener"
+                >اسأل عن هذا البرنامج
+                <svg aria-hidden="true"><use href="#arr" /></svg
+              ></a>
+            </li>
           </ul>
         </div>
-        <div>
-          <h3>Follow Us</h3>
-          <div class="socs">
-            <a
-              href="https://www.facebook.com/mohamed.adel.402955/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"
-                /></svg></a
-            ><a
-              href="https://www.instagram.com/dr_mohamed_elrayes"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r=".6" /></svg></a>
-          </div>
-          <p class="tags">@dr_mohamed_elrayes</p>
-          <a
-            class="lnk2"
-            lang="ar"
-            href="https://wa.me/201155822360"
-            target="_blank"
-            rel="noopener"
-            >احجز استشارتك وابدأ رحلتك.</a
-          >
-        </div>
-      </div>
-      <p class="fbar">
-        &copy; 2026 MFT – Medical Fitness Transformation. All Rights Reserved.
-      </p>
-    </footer>
+      </section>
+      
+    <site-footer></site-footer>
   </body>
 </html>

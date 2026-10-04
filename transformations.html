@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700;800&family=Cairo:wght@400;600;800&display=swap"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/layout.js"></script>
     <script src="js/main.js" defer></script>
   </head>
   <body class="p-trans">
@@ -25,12 +26,6 @@
           <rect x="4" y="2" width="9" height="17" rx="1.5" />
           <rect x="9" y="9" width="12" height="9" rx="1" />
           <path d="M9 12h12M11 15h3" />
-        </symbol>
-        <symbol id="i-wa" viewBox="0 0 24 24">
-          <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z" />
-          <path
-            d="M9 8c-.5 1 .5 3.5 2.5 5.5s3.5 2 4.5 1.5l.5-1.5-2-1-1 .8c-.8-.4-1.7-1.3-2-2.1l.8-1z"
-          />
         </symbol>
         <symbol id="i-doc" viewBox="0 0 24 24">
           <circle cx="12" cy="6.5" r="3.5" />
@@ -93,73 +88,20 @@
 
     <!-- ===================== PAGE HEADER ===================== -->
     <header class="phead">
-      <nav class="nav" aria-label="Main">
-        <a
-          class="logo"
-          href="index.html"
-          aria-label="MFT – Medical Fitness Transformation, home"
-        >
-          <img
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="88"
-            height="88"
-          />
-        </a>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="sub" href="index.html#programs">Programs</a></li>
-          <li><a href="calculator.html">Calorie Calculator</a></li>
-          <li>
-            <a href="transformations.html" aria-current="page"
-              >Transformations</a
-            >
-          </li>
-          <li><a href="articles.html">Articles</a></li>
-          <li><a class="sub" href="index.html#pricing">Membership</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <a
-          class="pill"
-          href="https://wa.me/201155822360"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="long">Book a consultation</span>
-          <span class="short">Book</span>
-          <span class="dot"
-            ><svg aria-hidden="true"><use href="#arr" /></svg
-          ></span>
-        </a>
-        <button class="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            <path
-              d="M0 1h20M0 7h20M0 13h20"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </nav>
+      <site-nav current="transformations"></site-nav>
 
-      <p class="lbl" lang="ar">التحولات</p>
-      <h1 class="ttl" lang="ar" dir="rtl">قصص نجاح <em>حقيقية</em></h1>
-      <p class="lead2" lang="ar" dir="rtl">
-        مجموعة من قصص التحول لعملاء MFT، نتائج جاءت من خلال الالتزام بالخطة،
-        المتابعة المستمرة، والتعديل على فترات مختلفة.
-      </p>
+      
     </header>
 
     <!-- ===================== TRANSFORMATIONS GRID ===================== -->
     <main>
-      <section class="sec dark ctr" aria-labelledby="h-grid">
+      <section class="sec light ctr" aria-labelledby="h-grid">
         <div class="wrap">
           <h2 class="ttl rv" id="h-grid" lang="ar" dir="rtl">
-            قبل <em>وبعد</em>
+            قصص نجاح <em>حقيقية</em>
           </h2>
           <p class="ap rv ctr2" lang="ar" dir="rtl">
-            كل صورة هنا هي نتاج رحلة تدريبية وغذائية مكتملة، بإشراف د. محمد
-            الريس وفريق MFT.
+       مجموعة من قصص التحول لعملاء MFT، حيث كل صورة توثّق <span style="color: red;"> قبل وبعد</span>  رحلة تدريبية وغذائية مكتملة، بإشراف د. محمد الريس وفريق MFT. نتائج حقيقية جاءت من خلال الالتزام بالخطة، المتابعة المستمرة، والتعديل المستمر وفق احتياجات كل حالة وعلى فترات مختلفة.
           </p>
 
           <ul class="tgrid" style="margin-top: 48px">
@@ -298,100 +240,6 @@
     </main>
 
     <!-- ===================== FOOTER ===================== -->
-    <footer class="ft" aria-label="Footer">
-      <div class="fg">
-        <div>
-          <img
-            class="flogo"
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="110"
-            height="110"
-            loading="lazy"
-          />
-          <p
-            class="ap"
-            lang="ar"
-            dir="rtl"
-            style="margin-top: 14px; font-size: 0.95rem"
-          >
-            نساعدك على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
-          </p>
-          <p class="slog" dir="ltr">
-            Better Health. Stronger Body. Greater You.
-          </p>
-          <p class="ap" lang="ar" dir="rtl" style="font-size: 0.9rem">
-            <b style="color: #fff">د. محمد الريس</b><br />Founder &amp; Medical
-            Fitness Director
-          </p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#programs">Programs</a></li>
-            <li><a href="transformations.html">Transformations</a></li>
-            <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>About</h3>
-          <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="index.html#coaching">Online Coaching</a></li>
-            <li><a href="index.html#method">Methodology</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Support</h3>
-          <ul>
-            <li>
-              <a
-                href="https://wa.me/201155822360"
-                target="_blank"
-                rel="noopener"
-                >WhatsApp</a
-              >
-            </li>
-            <li><a href="tel:+201155822360">+20 11 55822360</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Follow Us</h3>
-          <div class="socs">
-            <a
-              href="https://www.facebook.com/mohamed.adel.402955/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"
-                /></svg></a
-            ><a
-              href="https://www.instagram.com/dr_mohamed_elrayes"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r=".6" /></svg></a>
-          </div>
-          <p class="tags">@dr_mohamed_elrayes</p>
-          <a
-            class="lnk2"
-            lang="ar"
-            href="https://wa.me/201155822360"
-            target="_blank"
-            rel="noopener"
-            >احجز استشارتك وابدأ رحلتك.</a
-          >
-        </div>
-      </div>
-      <p class="fbar">
-        &copy; 2026 MFT – Medical Fitness Transformation. All Rights Reserved.
-      </p>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>

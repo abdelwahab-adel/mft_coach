@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <!-- العنوان والوصف وصورة المشاركة تُستبدل تلقائيًا من js/article.js حسب ?id= -->
+    <title>المقالات – MFT</title>
+    <meta
+      name="description"
+      content="مقالات MFT في التغذية واللياقة البدنية والصحة."
+    />
+    <meta name="theme-color" content="#050506" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:title" content="المقالات – MFT" />
+    <meta
+      property="og:description"
+      content="مقالات MFT في التغذية واللياقة البدنية والصحة."
+    />
+    <link rel="icon" href="assets/images/logo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&family=Cairo:wght@400;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/layout.js"></script>
+    <!-- الترتيب مهم: البيانات ثم رسم المقال ثم main.js (ليلتقط عناصر .rv) -->
+    <script src="js/articles-data.js" defer></script>
+    <script src="js/article.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="pg p-articles">
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="arr" viewBox="0 0 24 24">
+          <path
+            d="M7 17 17 7M8 7h9v9"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="go" viewBox="0 0 24 24">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="user" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+        </symbol>
+        <symbol id="target" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1.2" />
+        </symbol>
+        <symbol id="list" viewBox="0 0 24 24">
+          <path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" />
+        </symbol>
+        <symbol id="dumb" viewBox="0 0 24 24">
+          <path d="M2 9v6M5 7v10M19 7v10M22 9v6M5 12h14" />
+        </symbol>
+        <symbol id="bars" viewBox="0 0 24 24">
+          <path d="M5 20v-6M11 20V9M17 20V4" />
+        </symbol>
+        <symbol id="trend" viewBox="0 0 24 24">
+          <path d="m3 17 6-6 4 4 8-9M15 6h6v6" />
+        </symbol>
+        <symbol id="pulse" viewBox="0 0 24 24">
+          <path d="M3 12h4l2.5-6 4 12 2.5-6H21" />
+        </symbol>
+        <symbol id="flask" viewBox="0 0 24 24">
+          <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" />
+        </symbol>
+        <symbol id="shield" viewBox="0 0 24 24">
+          <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" />
+        </symbol>
+        <symbol id="ig" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r=".8" />
+        </symbol>
+        <symbol id="fb" viewBox="0 0 24 24">
+          <path
+            d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="ar-top">
+      <site-nav current="articles"></site-nav>
+    </header>
+    <main class="aw">
+      <!-- المقال: يُملأ بالبيانات من js/article.js -->
+      <article class="aw-in" id="article" lang="ar" dir="rtl" hidden>
+        <nav class="aw-bc" aria-label="مسار الصفحة">
+          <a href="index.html">الرئيسية</a><span>/</span
+          ><a href="articles.html">المقالات</a>
+        </nav>
+        <div class="aw-meta">
+          <span class="art-tag st" id="a-tag"></span
+          ><span class="aud" id="a-aud"></span>
+        </div>
+        <h1 id="a-title"></h1>
+        <figure class="aw-img">
+          <img id="a-img" alt="" width="1000" height="560" />
+        </figure>
+        <div class="aw-body" id="a-body"></div>
+        <aside class="aw-src" id="a-src" lang="ar" dir="rtl">
+          <b>المصادر</b>
+          <ul id="a-srclist"></ul>
+        </aside>
+        <div class="aw-cta">
+          <p>
+            ابدأ رحلتك مع MFT اليوم، وابنِ جسمًا أقوى وعادات أفضل ونظامًا صحيًا
+            تستطيع الاستمرار عليه.
+          </p>
+          <a
+            class="btn solid"
+            href="https://wa.me/201155822360"
+            target="_blank"
+            rel="noopener"
+            >احجز استشارتك
+            <span class="a"
+              ><svg aria-hidden="true"><use href="#arr" /></svg></span
+          ></a>
+        </div>
+      </article>
+
+      <!-- يظهر فقط عند رقم مقال غير موجود -->
+      <div class="aw-in" id="notfound" lang="ar" dir="rtl" hidden>
+        <nav class="aw-bc" aria-label="مسار الصفحة">
+          <a href="index.html">الرئيسية</a><span>/</span
+          ><a href="articles.html">المقالات</a>
+        </nav>
+        <h1 style="margin-top: 22px">المقال غير موجود</h1>
+        <p style="margin: 0 0 28px; font-size: 1.1rem; line-height: 1.9">
+          تعذّر العثور على المقال المطلوب. ربما الرابط غير صحيح أو تم نقل المقال.
+        </p>
+        <a class="btn solid" href="articles.html"
+          >تصفح كل المقالات
+          <span class="a"
+            ><svg aria-hidden="true"><use href="#arr" /></svg></span
+        ></a>
+      </div>
+
+      <!-- المقالات ذات الصلة: تُبنى من نفس البيانات (المقالات الثلاثة التالية) -->
+      <section class="ar-sec aw-rel" id="related" aria-labelledby="h-rel" hidden>
+        <div class="af-wrap">
+          <h2 id="h-rel" lang="ar">مقالات أخرى</h2>
+          <div
+            class="art-grid three"
+            id="a-rel"
+            style="margin-top: 36px"
+          ></div>
+        </div>
+      </section>
+
+      <noscript>
+        <div class="aw-in" lang="ar" dir="rtl">
+          <p>يلزم تفعيل JavaScript لعرض هذا المقال.</p>
+          <a href="articles.html">العودة إلى المقالات</a>
+        </div>
+      </noscript>
+    </main>
+    <site-footer></site-footer>
+  </body>
+</html>

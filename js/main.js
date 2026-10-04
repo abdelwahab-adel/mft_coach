@@ -80,14 +80,30 @@ if (nv) {
   sc();
   addEventListener("scroll", sc, { passive: true });
   const bg = nv.querySelector(".burger");
+  const setOpen = (o) => {
+    nv.classList.toggle("open", o);
+    if (bg) {
+      bg.setAttribute("aria-expanded", String(o));
+      bg.setAttribute("aria-label", o ? "Close menu" : "Open menu");
+    }
+  };
   if (bg) {
     bg.setAttribute("aria-expanded", "false");
-    bg.addEventListener("click", () => {
-      const o = nv.classList.toggle("open");
-      bg.setAttribute("aria-expanded", o);
-    });
+    bg.addEventListener("click", () => setOpen(!nv.classList.contains("open")));
   }
   nv.querySelectorAll(".links a").forEach((a) =>
-    a.addEventListener("click", () => nv.classList.remove("open")),
+    a.addEventListener("click", () => setOpen(false)),
   );
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nv.classList.contains("open")) {
+      setOpen(false);
+      bg && bg.focus();
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (nv.classList.contains("open") && !nv.contains(e.target)) setOpen(false);
+  });
+  matchMedia("(min-width: 1101px)").addEventListener("change", (m) => {
+    if (m.matches) setOpen(false);
+  });
 }

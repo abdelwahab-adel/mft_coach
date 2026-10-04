@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
+      <script src="js/layout.js"></script>
   </head>
   <body class="pg p-doctor">
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -78,55 +79,12 @@
       </defs>
     </svg>
     <header class="dh-banner">
-      <nav class="nav" aria-label="Main">
-        <a
-          class="logo"
-          href="index.html"
-          aria-label="MFT – Medical Fitness Transformation, home"
-        >
-          <img
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="88"
-            height="88"
-          />
-        </a>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="sub" href="index.html#programs">Programs</a></li>
-          <li><a href="calculator.html">Calorie Calculator</a></li>
-          <li><a href="transformations.html">Transformations</a></li>
-          <li><a href="articles.html">Articles</a></li>
-          <li><a class="sub" href="index.html#pricing">Membership</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-        </ul>
-        <a
-          class="pill"
-          href="https://wa.me/201155822360"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="long">Book a consultation</span>
-          <span class="short">Book</span>
-          <span class="dot"
-            ><svg aria-hidden="true"><use href="#arr" /></svg
-          ></span>
-        </a>
-        <button class="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            <path
-              d="M0 1h20M0 7h20M0 13h20"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </nav>
+      <site-nav current="about"></site-nav>
     </header>
     <main class="dh">
       <div class="dh-av">
         <img
-          src="assets/images/logo.jpg"
+          src="assets/images/face.jpg"
           alt="MFT – Medical Fitness Transformation"
           width="230"
           height="230"
@@ -137,63 +95,68 @@
       <div class="dh-bio rv" lang="ar" dir="rtl">
         <p class="q">وراء كل تحول... منهج</p>
         <p>
-          يقود د. محمد الريس منهج MFT الذي يجمع بين المعرفة الطبية، علم وظائف
-          الأعضاء، التدريب الرياضي، والتغذية بهدف بناء رحلة تحول أكثر تنظيمًا
-          ووعيًا.
+          يقود د. محمد الريس رحلة MFT بمنهج يجمع بين المعرفة الطبية، وفهم وظائف الجسم، والتدريب الرياضي، والتغذية، بهدف تقديم رؤية متكاملة للتعامل مع رحلة تغيير الجسم وتحسين الأداء ونمط الحياة.
         </p>
         <p>
-          الفكرة الأساسية في MFT هي أن تغيير الجسم لا يبدأ من جدول تمرين فقط،
-          وإنما من فهم الحالة والهدف ونمط الحياة، ثم بناء خطة متكاملة يمكن
-          متابعتها وتطويرها مع الوقت.
+          يعتمد منهجه على أن الوصول إلى نتيجة حقيقية لا يبدأ من برنامج جاهز يتم تطبيقه على الجميع، وإنما من فهم الشخص نفسه؛ حالته، أهدافه، نمط حياته، مستوى نشاطه، والتحديات التي يواجهها، ثم بناء خطة تتناسب مع هذه المعطيات ويمكن تطويرها مع مرور الوقت.
         </p>
       </div>
-      <div class="dh-vis" lang="ar" dir="rtl">
-        <div class="ab-c rv">
-          <span class="ab-ic"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="#flask" /></svg
-          ></span>
+            <div class="dh-doc" lang="ar" dir="rtl">
+        <section class="dh-s rv">
           <div>
-            <b>الرؤية الطبية</b>
-            <p>
-              فهم الاحتياجات الصحية والمعلومات الطبية ذات الصلة قبل بناء
-              البرنامج.
-            </p>
+            <h2>منهج قائم على الفهم</h2>
+            <p>يركز د. محمد الريس على فهم العلاقة بين مختلف العوامل التي تؤثر في جسم الإنسان ونتائجه. فالتدريب وحده لا يمثل الصورة كاملة، وكذلك التغذية وحدها لا تكفي لبناء رحلة متكاملة.</p>
+            <p>لذلك ينظر إلى التغيير من عدة جوانب مترابطة، تبدأ بفهم الاحتياجات والحالة الحالية، ثم تحديد الأهداف، وتصميم التدريب والتغذية، ومتابعة الاستجابة والتقدم، وإجراء التعديلات اللازمة في الوقت المناسب.</p>
           </div>
-        </div>
-        <div class="ab-c rv">
-          <span class="ab-ic"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="#dumb" /></svg
-          ></span>
+        </section>
+        <section class="dh-s rv">
           <div>
-            <b>الرؤية الرياضية</b>
-            <p>
-              اختيار أسلوب التدريب المناسب والعمل على تطوير القوة والعضلات
-              والأداء.
-            </p>
+            <h2>الرؤية الطبية</h2>
+            <p>يعتمد د. محمد الريس على المعرفة الطبية وفهم الجوانب المرتبطة بصحة الجسم عند بناء التصور العام للرحلة.</p>
+            <p>هذه الرؤية تساعد على التعامل مع كل حالة وفق احتياجاتها وظروفها، مع مراعاة المعلومات الصحية ذات الصلة والعوامل التي قد تؤثر على الأداء أو القدرة على الالتزام بالبرنامج.</p>
+            <p>الهدف هو أن تكون القرارات المتعلقة بالرحلة مبنية على فهم واضح للحالة، وليس على وصفة عامة تصلح للجميع.</p>
           </div>
-        </div>
-        <div class="ab-c rv">
-          <span class="ab-ic"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="#target" /></svg
-          ></span>
+        </section>
+        <section class="dh-s rv">
           <div>
-            <b>الرؤية الغذائية</b>
-            <p>بناء نظام غذائي يتناسب مع احتياجات العميل وروتينه وأهدافه.</p>
+            <h2>فهم وظائف الجسم</h2>
+            <p>يمثل فهم كيفية استجابة الجسم للتدريب والتغذية والنشاط اليومي جزءًا أساسيًا من منهج د. محمد الريس.</p>
+            <p>يهتم بفهم التكيف مع التدريب، واستجابة الجسم للمجهود، وأهمية الاستشفاء، وتأثير النوم والعادات اليومية والتغذية على الأداء والنتائج.</p>
+            <p>هذا المنظور يساعد على بناء خطة أكثر واقعية وقابلية للتطور، بدل الاعتماد على حلول مؤقتة أو تغييرات منفصلة عن طبيعة الجسم واحتياجاته.</p>
           </div>
-        </div>
-        <div class="ab-c rv">
-          <span class="ab-ic"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <use href="#trend" /></svg
-          ></span>
+        </section>
+        <section class="dh-s rv">
           <div>
-            <b>رؤية التحول</b>
-            <p>تحقيق نتائج قابلة للاستمرار وتحويل التغيير إلى أسلوب حياة.</p>
+            <h2>الرؤية الرياضية</h2>
+            <p>في الجانب الرياضي، يهتم د. محمد الريس ببناء برنامج تدريبي يتناسب مع مستوى الشخص وهدفه وقدرته على التطور.</p>
+            <p>لا تقتصر الفكرة على أداء مجموعة من التمارين، وإنما تشمل فهم الهدف من التدريب، وتنظيم الأحمال والشدة، وتطوير القوة والعضلات والأداء البدني بصورة تدريجية.</p>
+            <p>ومع تقدم الشخص، يمكن أن تتغير احتياجاته وقدراته، ولذلك تصبح المتابعة والتعديل جزءًا أساسيًا من العملية التدريبية.</p>
           </div>
-        </div>
+        </section>
+        <section class="dh-s rv">
+          <div>
+            <h2>الرؤية الغذائية</h2>
+            <p>يتعامل د. محمد الريس مع التغذية باعتبارها جزءًا أساسيًا من منظومة التحول، وليست مجرد قائمة أطعمة مؤقتة.</p>
+            <p>يركز على بناء توجه غذائي يتناسب مع احتياجات الشخص وأهدافه وروتينه اليومي، مع مراعاة قدرته على الالتزام بالخطة والاستمرار عليها.</p>
+            <p>الفكرة ليست الوصول إلى نظام مثالي على الورق، وإنما الوصول إلى نظام واقعي يمكن تطبيقه داخل الحياة اليومية والاستمرار عليه مع الوقت.</p>
+          </div>
+        </section>
+        <section class="dh-s rv">
+          <div>
+            <h2>المتابعة والتطور</h2>
+            <p>يرى د. محمد الريس أن وضع الخطة هو بداية الرحلة وليس نهايتها.</p>
+            <p>من خلال المتابعة، يمكن تقييم التقدم، وملاحظة التغيرات، وفهم استجابة الجسم، وتحديد الجوانب التي تحتاج إلى تطوير أو تعديل.</p>
+            <p>ومع تغير الظروف والأهداف ومستوى الأداء، يمكن تطوير المسار بما يتناسب مع المرحلة الجديدة، بحيث تظل الخطة مرتبطة بالشخص وليست منفصلة عنه.</p>
+          </div>
+        </section>
+        <section class="dh-s rv">
+          <div>
+            <h2>فلسفة د. محمد الريس</h2>
+            <p>تقوم فلسفة د. محمد الريس على أن تغيير الجسم عملية تحتاج إلى فهم وصبر واستمرارية، وليست مجرد نتيجة سريعة يتم الوصول إليها من خلال حل مؤقت.</p>
+            <p>لذلك يجمع منهجه بين <strong>الفهم الطبي، علم وظائف الأعضاء، التدريب الرياضي، التغذية، والمتابعة</strong> لبناء تجربة أكثر تنظيمًا ووعيًا، تساعد الشخص على فهم ما يفعله ولماذا يفعله، وكيف يمكنه الاستمرار في التطور.</p>
+            <p>بالنسبة لد. محمد الريس، النجاح لا يرتبط فقط بالنتيجة التي تظهر في نهاية الرحلة، وإنما بالمنهج الذي يساعد الشخص على بناء تغيير يمكنه الاستمرار معه وتحويله إلى جزء من أسلوب حياته.</p>
+          </div>
+        </section>
       </div>
       <p class="dh-cta rv">
         <a
@@ -208,100 +171,6 @@
         ></a>
       </p>
     </main>
-    <footer class="ft" aria-label="Footer">
-      <div class="fg">
-        <div>
-          <img
-            class="flogo"
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="110"
-            height="110"
-            loading="lazy"
-          />
-          <p
-            class="ap"
-            lang="ar"
-            dir="rtl"
-            style="margin-top: 14px; font-size: 0.95rem"
-          >
-            نساعدك على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
-          </p>
-          <p class="slog" dir="ltr">
-            Better Health. Stronger Body. Greater You.
-          </p>
-          <p class="ap" lang="ar" dir="rtl" style="font-size: 0.9rem">
-            <b style="color: #fff">د. محمد الريس</b><br />Founder &amp; Medical
-            Fitness Director
-          </p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#programs">Programs</a></li>
-            <li><a href="transformations.html">Transformations</a></li>
-            <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>About</h3>
-          <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="index.html#coaching">Online Coaching</a></li>
-            <li><a href="index.html#method">Methodology</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Support</h3>
-          <ul>
-            <li>
-              <a
-                href="https://wa.me/201155822360"
-                target="_blank"
-                rel="noopener"
-                >WhatsApp</a
-              >
-            </li>
-            <li><a href="tel:+201155822360">+20 11 55822360</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Follow Us</h3>
-          <div class="socs">
-            <a
-              href="https://www.facebook.com/mohamed.adel.402955/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"
-                /></svg></a
-            ><a
-              href="https://www.instagram.com/dr_mohamed_elrayes"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r=".6" /></svg></a>
-          </div>
-          <p class="tags">@dr_mohamed_elrayes</p>
-          <a
-            class="lnk2"
-            lang="ar"
-            href="https://wa.me/201155822360"
-            target="_blank"
-            rel="noopener"
-            >احجز استشارتك وابدأ رحلتك.</a
-          >
-        </div>
-      </div>
-      <p class="fbar">
-        &copy; 2026 MFT – Medical Fitness Transformation. All Rights Reserved.
-      </p>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>

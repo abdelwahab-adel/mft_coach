@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
     <script src="js/tools.js" defer></script>
+      <script src="js/layout.js"></script>
   </head>
   <body class="pg p-calc">
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -78,53 +79,8 @@
         </symbol>
       </defs>
     </svg>
-    <header class="cl-top">
-      <nav class="nav" aria-label="Main">
-        <a
-          class="logo"
-          href="index.html"
-          aria-label="MFT – Medical Fitness Transformation, home"
-        >
-          <img
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="88"
-            height="88"
-          />
-        </a>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="sub" href="index.html#programs">Programs</a></li>
-          <li>
-            <a href="calculator.html" aria-current="page">Calorie Calculator</a>
-          </li>
-          <li><a href="transformations.html">Transformations</a></li>
-          <li><a href="articles.html">Articles</a></li>
-          <li><a class="sub" href="index.html#pricing">Membership</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <a
-          class="pill"
-          href="https://wa.me/201155822360"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="long">Book a consultation</span>
-          <span class="short">Book</span>
-          <span class="dot"
-            ><svg aria-hidden="true"><use href="#arr" /></svg
-          ></span>
-        </a>
-        <button class="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            <path
-              d="M0 1h20M0 7h20M0 13h20"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </nav>
+    <header class="phead">
+      <site-nav current="calculator"></site-nav>
       <p class="af-eye" lang="ar">Calorie Calculator</p>
       <h1 lang="ar">حاسبة السعرات</h1>
       <p lang="ar" dir="rtl">
@@ -171,8 +127,7 @@
             <!-- 01 - البيانات الأساسية + الهدف -->
             <fieldset class="mft-calculator-section mft-section-data">
               <legend class="mft-section-title">
-                <span class="mft-step-number" aria-hidden="true">01</span
-                >بياناتك الأساسية
+                بياناتك الأساسية
               </legend>
               <p class="mft-section-description">
                 أدخل بياناتك بدقة قدر الإمكان للحصول على تقدير أفضل لاحتياجاتك
@@ -403,8 +358,7 @@
               aria-describedby="mft-activity-error"
             >
               <legend class="mft-section-title">
-                <span class="mft-step-number" aria-hidden="true">02</span>مستوى
-                نشاطك
+                مستوى نشاطك
               </legend>
               <p class="mft-section-description">
                 اختر المستوى الذي يصف نشاطك المعتاد، وليس أقصى نشاط تقوم به
@@ -719,7 +673,7 @@
 
             <p class="mft-method-note">
               <strong>كيف يتم التقدير؟</strong> يتم تقدير معدل الأيض الأساسي
-              باستخدام معادلة ميفلين–سانت جيور للبالغين، ثم تقدير الاحتياج
+              باستخدام معادلة ميفلين  سانت جيور للبالغين، ثم تقدير الاحتياج
               اليومي للطاقة وفق مستوى النشاط والهدف المحدد. النتائج تظل تقديرية
               وقد تحتاج إلى التعديل بناءً على المتابعة الفعلية واستجابة الجسم.
             </p>
@@ -985,100 +939,6 @@
         </section>
       </div>
     </main>
-    <footer class="ft" aria-label="Footer">
-      <div class="fg">
-        <div>
-          <img
-            class="flogo"
-            src="assets/images/logo.jpg"
-            alt="MFT Medical Fitness Transformation logo"
-            width="110"
-            height="110"
-            loading="lazy"
-          />
-          <p
-            class="ap"
-            lang="ar"
-            dir="rtl"
-            style="margin-top: 14px; font-size: 0.95rem"
-          >
-            نساعدك على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
-          </p>
-          <p class="slog" dir="ltr">
-            Better Health. Stronger Body. Greater You.
-          </p>
-          <p class="ap" lang="ar" dir="rtl" style="font-size: 0.9rem">
-            <b style="color: #fff">د. محمد الريس</b><br />Founder &amp; Medical
-            Fitness Director
-          </p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#programs">Programs</a></li>
-            <li><a href="transformations.html">Transformations</a></li>
-            <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>About</h3>
-          <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="index.html#coaching">Online Coaching</a></li>
-            <li><a href="index.html#method">Methodology</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Support</h3>
-          <ul>
-            <li>
-              <a
-                href="https://wa.me/201155822360"
-                target="_blank"
-                rel="noopener"
-                >WhatsApp</a
-              >
-            </li>
-            <li><a href="tel:+201155822360">+20 11 55822360</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Follow Us</h3>
-          <div class="socs">
-            <a
-              href="https://www.facebook.com/mohamed.adel.402955/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"
-                /></svg></a
-            ><a
-              href="https://www.instagram.com/dr_mohamed_elrayes"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener"
-              ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r=".6" /></svg></a>
-          </div>
-          <p class="tags">@dr_mohamed_elrayes</p>
-          <a
-            class="lnk2"
-            lang="ar"
-            href="https://wa.me/201155822360"
-            target="_blank"
-            rel="noopener"
-            >احجز استشارتك وابدأ رحلتك.</a
-          >
-        </div>
-      </div>
-      <p class="fbar">
-        &copy; 2026 MFT – Medical Fitness Transformation. All Rights Reserved.
-      </p>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>
