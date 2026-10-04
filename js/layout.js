@@ -130,6 +130,10 @@
 <li><a href="about.html"${c("about")}>من نحن</a></li>
 
 
+<li><a href="${WA}" target="_blank"  >احجز مكانك الآن  <span class="dot"
+            ><svg aria-hidden="true"><use href="#arr" /></svg
+          ></span></a></li>
+
         </ul>
         <a
           class="pill"
