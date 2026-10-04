@@ -8,8 +8,8 @@
  * لتعديل رسائل الواتساب: عدّل MSG هنا فقط.
  */
 (() => {
-  const c = (k) => (k === cur ? ' aria-current="page"' : "");
   let cur = "";
+  const c = (k) => (k === cur ? ' aria-current="page"' : "");
 
   /* ---------- الواتساب: كل الرسائل هنا ----------
    * أي رابط wa.me بدون ?text= بياخد رسالة تلقائياً حسب مكانه في الصفحة.
@@ -17,6 +17,7 @@
    * لتحديد نوع الرسالة يدوياً: <a data-wa="consult|start|pricing|general">
    */
   const WA = "https://wa.me/201155822360";
+  window.MFT_WA = WA; // مصدر واحد لرقم الواتساب (يستخدمه main.js أيضًا)
   const GREET = "مرحبًا MFT 👋\n";
   const FORM = "\n\nالاسم:\nهدفي:";
   const MSG = {
@@ -128,11 +129,13 @@
 <li><a href="articles.html"${c("articles")}>المقالات</a></li>
 <li><a href="index.html#pricing">العضوية</a></li>
 <li><a href="about.html"${c("about")}>من نحن</a></li>
+<li class="menu-cta-li">
+  <a class="menu-cta" href="${WA}" target="_blank" rel="noopener">
+    <span>احجز مكانك الآن</span>
+    <span class="dot"><svg aria-hidden="true"><use href="#arr" /></svg></span>
+  </a>
+</li>
 
-
-<li><a href="${WA}" target="_blank"  >احجز مكانك الآن  <span class="dot"
-            ><svg aria-hidden="true"><use href="#arr" /></svg
-          ></span></a></li>
 
         </ul>
         <a
@@ -252,17 +255,19 @@ const COLS = [
     return t.content;
   };
 
-  customElements.define("site-nav", class extends HTMLElement {
-    connectedCallback() {
-      cur = this.getAttribute("current") || "";
-      ensureSprite();
-      this.replaceWith(frag(NAV()));
-    }
-  });
-  customElements.define("site-footer", class extends HTMLElement {
-    connectedCallback() {
-      ensureSprite();
-      this.replaceWith(frag(FOOTER()));
-    }
-  });
+  if (!customElements.get("site-nav"))
+    customElements.define("site-nav", class extends HTMLElement {
+      connectedCallback() {
+        cur = this.getAttribute("current") || "";
+        ensureSprite();
+        this.replaceWith(frag(NAV()));
+      }
+    });
+  if (!customElements.get("site-footer"))
+    customElements.define("site-footer", class extends HTMLElement {
+      connectedCallback() {
+        ensureSprite();
+        this.replaceWith(frag(FOOTER()));
+      }
+    });
 })();

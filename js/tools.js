@@ -65,7 +65,10 @@
       });
     const h = location.hash.slice(1);
     cur = pills.some((p) => p.dataset.f === h) ? h : "all";
-    pg = Math.max(1, +new URLSearchParams(location.search).get("page") || 1);
+    pg = Math.max(
+      1,
+      Math.floor(+new URLSearchParams(location.search).get("page")) || 1,
+    ); // الكسور (?page=1.5) كانت تكسر الترقيم
     render();
   }
 })();

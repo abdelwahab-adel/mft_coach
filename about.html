@@ -2,6 +2,8 @@
 <html lang="ar">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -85,6 +87,7 @@
       
     </header>
     <main>
+      <h1 class="vh" lang="ar">من نحن – MFT Medical Fitness Transformation</h1>
       <section class="sec light" id="about" aria-labelledby="h-about">
         <div class="wrap sgrid">
           <div class="stack rv">
@@ -93,28 +96,19 @@
               src="https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80"
               alt="رياضي في الصالة"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-1.jpg';
-              "
+              data-fallback="assets/images/hero-bg.jpg"
             /><img
               class="s2"
               src="https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80"
               alt="تمرين رفع الأثقال"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-2.jpg';
-              "
+              data-fallback="assets/images/results.jpg"
             /><img
               class="s3"
               src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80"
               alt="لاعب كمال أجسام"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-3.jpg';
-              "
+              data-fallback="assets/images/why.jpg"
             />
           </div>
           <div>
@@ -288,7 +282,7 @@
                 aria-label="القوة والتحمل"
               >
                 <span class="pg-no">03</span
-                ><span class="pg-kind">Strength & Endurance</span>
+                ><span class="pg-kind">Strength &amp; Endurance</span>
               </div>
               <h3>القوة والتحمل</h3>
               <p class="pg-desc">
@@ -419,7 +413,7 @@
                 aria-label="التعافي وإعادة التأهيل"
               >
                 <span class="pg-no">06</span
-                ><span class="pg-kind">Recovery & Rehab</span>
+                ><span class="pg-kind">Recovery &amp; Rehab</span>
               </div>
               <h3>التعافي وإعادة التأهيل</h3>
               <p class="pg-desc">

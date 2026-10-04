@@ -2,6 +2,8 @@
 <html lang="ar">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -97,22 +99,23 @@
             aria-label="تصنيف المقالات"
             lang="ar"
           >
-            <button class="af-pill on" data-f="all" aria-pressed="true">
+            <button type="button" class="af-pill on" data-f="all" aria-pressed="true">
               الكل</button
-            ><button class="af-pill" data-f="weight" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="weight" aria-pressed="false">
               تخفيف الوزن</button
-            ><button class="af-pill" data-f="healthy" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="healthy" aria-pressed="false">
               أكل صحي</button
-            ><button class="af-pill" data-f="nutrition" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="nutrition" aria-pressed="false">
               تغذية</button
-            ><button class="af-pill" data-f="lifestyle" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="lifestyle" aria-pressed="false">
               نمط الحياة</button
-            ><button class="af-pill" data-f="fitness" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="fitness" aria-pressed="false">
               لياقة بدنية</button
-            ><button class="af-pill" data-f="wellness" aria-pressed="false">
+            ><button type="button" class="af-pill" data-f="wellness" aria-pressed="false">
               صحة
             </button>
           </div>
+          <h2 class="vh" lang="ar">قائمة المقالات</h2>
           <div class="art-grid">
             <a class="art rv" href="article.html?id=1" data-c="weight"
               ><div

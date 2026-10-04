@@ -1,0 +1,21 @@
+# رؤوس أمان على مستوى الخادم — تعمل تلقائيًا على Netlify و Cloudflare Pages.
+# على استضافة أخرى (Apache / Nginx / Vercel) انقل نفس الرؤوس إلى إعداداتها.
+# سياسة CSP هنا مطابقة لما في وسوم <meta> داخل الصفحات، مع إضافة frame-ancestors
+# التي لا تعمل إلا كرأس HTTP (تمنع تضمين الموقع داخل iframe في موقع آخر).
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  # فعّل HSTS فقط بعد التأكد أن الموقع (وكل نطاقاته الفرعية) يعمل بـ HTTPS:
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# كاش معتدل: أسماء الملفات غير مُبصَّمة (hash)، فلا نستخدم immutable حتى تظهر أي صورة/ملف يُستبدل.
+/assets/*
+  Cache-Control: public, max-age=604800
+/css/*
+  Cache-Control: public, max-age=3600
+/js/*
+  Cache-Control: public, max-age=3600

@@ -1,45 +1,83 @@
 document.documentElement.classList.add("js");
-const io = new IntersectionObserver(
-  (es) =>
-    es.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      }
-    }),
-  { threshold: 0.12 },
-);
+
+/* رقم الواتساب مصدره layout.js (window.MFT_WA)، وهذا احتياطي فقط */
+const WA_BASE = window.MFT_WA || "https://wa.me/201155822360";
+const hasIO = "IntersectionObserver" in window;
+
+/* ---------- ظهور العناصر عند التمرير ---------- */
+const io = hasIO
+  ? new IntersectionObserver(
+      (es) =>
+        es.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.12 },
+    )
+  : null;
 document.querySelectorAll(".rv").forEach((el) => {
+  /* بدون IntersectionObserver نُظهر العنصر فورًا بدل تركه شفافًا للأبد */
+  if (!io) return el.classList.add("in");
   el.style.transitionDelay =
     ([...el.parentNode.children].indexOf(el) % 6) * 90 + "ms";
   io.observe(el);
 });
+
+/* ---------- صور بديلة (بدل onerror المضمّن، ليتوافق مع CSP) ---------- */
+document.querySelectorAll("img[data-fallback]").forEach((img) => {
+  const swap = () => {
+    const fb = img.dataset.fallback;
+    img.removeAttribute("data-fallback"); // مرة واحدة فقط لتفادي التكرار اللانهائي
+    if (fb) img.src = fb;
+  };
+  img.addEventListener("error", swap, { once: true });
+  /* لو فشل التحميل قبل تنفيذ هذا السكربت */
+  if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) swap();
+});
+
+/* ---------- أزرار تمرير الشريط (إن وُجد) ---------- */
 const rail = document.querySelector(".rail");
-document
-  .querySelectorAll("[data-dir]")
-  .forEach((b) =>
-    b.addEventListener("click", () =>
-      rail.scrollBy({
-        left: b.dataset.dir * rail.clientWidth * 0.8,
-        behavior: "smooth",
-      }),
-    ),
-  );
+if (rail)
+  document
+    .querySelectorAll("[data-dir]")
+    .forEach((b) =>
+      b.addEventListener("click", () =>
+        rail.scrollBy({
+          left: b.dataset.dir * rail.clientWidth * 0.8,
+          behavior: "smooth",
+        }),
+      ),
+    );
+
+/* ---------- نموذج التواصل -> رسالة واتساب جاهزة ---------- */
 const cf = document.getElementById("cform");
-if (cf)
+if (cf) {
+  /* يحذف محارف التحكم غير المرئية ويقصّ الطول (الحد الأقصى من maxlength الحقل) */
+  const clean = (v, max) =>
+    String(v)
+      .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
+      .trim()
+      .slice(0, max);
   cf.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!cf.reportValidity()) return;
     const t = [...new FormData(cf)]
-        .filter(([, v]) => String(v).trim())
-        .map(([k, v]) => "• " + k + ": " + String(v).trim())
+        .map(([k, v]) => {
+          const fld = cf.elements[k];
+          const max = fld && fld.maxLength > 0 ? fld.maxLength : 200;
+          return [k, clean(v, max)];
+        })
+        .filter(([, v]) => v)
+        .map(([k, v]) => "• " + k + ": " + v)
         .join("\n"),
       msg = "مرحبًا MFT 👋\nأرغب في بدء رحلتي معكم.\n\n" + t,
-      u = "https://wa.me/201155822360?text=" + encodeURIComponent(msg),
+      u = WA_BASE + "?text=" + encodeURIComponent(msg),
       a = document.createElement("a");
     a.href = u;
     a.target = "_blank";
-    a.rel = "noopener";
+    a.rel = "noopener noreferrer";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -49,31 +87,37 @@ if (cf)
       st.hidden = false;
     }
   });
-const cio = new IntersectionObserver(
-  (es) =>
-    es.forEach((e) => {
-      if (!e.isIntersecting) return;
-      cio.unobserve(e.target);
-      const t = e.target.textContent,
-        m = t.match(/[\d.]+/);
-      if (!m || matchMedia("(prefers-reduced-motion:reduce)").matches) return;
-      const n = parseFloat(m[0]),
-        dec = (m[0].split(".")[1] || "").length,
-        t0 = performance.now();
-      const f = (now) => {
-        const p = Math.min((now - t0) / 1400, 1);
-        e.target.textContent = t.replace(
-          m[0],
-          (n * (1 - Math.pow(1 - p, 3))).toFixed(dec),
-        );
-        p < 1 && requestAnimationFrame(f);
-      };
-      requestAnimationFrame(f);
-    }),
-  { threshold: 0.6 },
-);
-document.querySelectorAll(".st b").forEach((b) => cio.observe(b));
+}
 
+/* ---------- عدّاد الأرقام (قسم الإحصاءات) ---------- */
+if (hasIO) {
+  const cio = new IntersectionObserver(
+    (es) =>
+      es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        const t = e.target.textContent,
+          m = t.match(/[\d.]+/);
+        if (!m || matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+        const n = parseFloat(m[0]),
+          dec = (m[0].split(".")[1] || "").length,
+          t0 = performance.now();
+        const f = (now) => {
+          const p = Math.min((now - t0) / 1400, 1);
+          e.target.textContent = t.replace(
+            m[0],
+            (n * (1 - Math.pow(1 - p, 3))).toFixed(dec),
+          );
+          p < 1 && requestAnimationFrame(f);
+        };
+        requestAnimationFrame(f);
+      }),
+    { threshold: 0.6 },
+  );
+  document.querySelectorAll(".st b").forEach((b) => cio.observe(b));
+}
+
+/* ---------- قائمة الموبايل ---------- */
 const nv = document.querySelector(".nav");
 if (nv) {
   const sc = () => nv.classList.toggle("sc", scrollY > 30);
@@ -103,7 +147,10 @@ if (nv) {
   document.addEventListener("click", (e) => {
     if (nv.classList.contains("open") && !nv.contains(e.target)) setOpen(false);
   });
-  matchMedia("(min-width: 1101px)").addEventListener("change", (m) => {
+  /* Safari القديم (< 14) لا يدعم addEventListener على MediaQueryList */
+  const mq = matchMedia("(min-width: 1101px)");
+  const onMq = (m) => {
     if (m.matches) setOpen(false);
-  });
+  };
+  mq.addEventListener ? mq.addEventListener("change", onMq) : mq.addListener(onMq);
 }

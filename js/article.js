@@ -33,6 +33,15 @@
 
   const articleUrl = (id) => "article.html?id=" + id;
 
+  // يسمح فقط بروابط http(s) — يمنع javascript: و data: لو دخلت بيانات غير موثوقة مستقبلًا
+  const safeUrl = (u, fallback) => {
+    try {
+      return /^https?:$/.test(new URL(u, location.href).protocol) ? u : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  };
+
   // الصورة المصغّرة للبطاقات = نفس صورة المقال بعرض 700
   const thumb = (url) => url.replace("w=1200", "w=700");
 
@@ -64,7 +73,7 @@
     }
     const list = $("a-srclist");
     sources.forEach(([label, href]) => {
-      const a = el("a", { href, target: "_blank", rel: "noopener noreferrer" }, label);
+      const a = el("a", { href: safeUrl(href, "#"), target: "_blank", rel: "noopener noreferrer" }, label);
       const li = el("li");
       li.appendChild(a);
       list.appendChild(li);
@@ -79,7 +88,7 @@
     });
 
     const im = el("div", { class: "art-im", role: "img", "aria-label": r.title });
-    im.style.backgroundImage = 'url("' + thumb(r.img) + '")';
+    im.style.backgroundImage = "url(" + JSON.stringify(safeUrl(thumb(r.img), "")) + ")";
 
     const body = el("div", { class: "art-b", lang: "ar", dir: "rtl" });
     body.appendChild(el("h3", null, r.title));
@@ -114,14 +123,14 @@
     meta("description", a.desc);
     meta("og:title", a.title, true);
     meta("og:description", a.desc, true);
-    meta("og:image", a.img, true);
+    meta("og:image", safeUrl(a.img, ""), true);
 
     // محتوى المقال
     $("a-tag").textContent = CATS[a.cat] || "";
     $("a-aud").textContent = a.aud || "";
     $("a-title").textContent = a.title;
     const img = $("a-img");
-    img.src = a.img;
+    img.src = safeUrl(a.img, "");
     img.alt = a.title;
     renderBody(a.body);
     renderSources(a.sources);

@@ -2,11 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>MFT – Personalized Coaching Transformation</title>
+    <meta
+      name="description"
+      content="MFT برامج تدريب وتغذية مخصصة أونلاين بإشراف طبي: خطة فردية، متابعة أسبوعية، وتعديل مستمر للوصول إلى تحول حقيقي ومستدام."
+    />
+    <meta name="theme-color" content="#050506" />
     <link rel="icon" href="assets/images/logo.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -164,7 +171,7 @@
         ><b>د. محمد الريس</b><span>مؤسس ومدير MFT</span></a
       >
 
-      <div class="socials" aria-label="Social media">
+      <div class="socials" role="group" aria-label="Social media">
         <a
           class="soc"
           href="https://www.instagram.com/dr_mohamed_elrayes"
@@ -217,6 +224,7 @@
     </section>
 
     <script src="js/main.js" defer></script>
+    <script src="js/home-articles.js" defer></script>
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
       <defs>
         <symbol id="n-calcheck" viewBox="0 0 512 512">
@@ -651,28 +659,19 @@
               src="https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80"
               alt="رياضي في الصالة"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-1.jpg';
-              "
+              data-fallback="assets/images/hero-bg.jpg"
             /><img
               class="s2"
               src="https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80"
               alt="تمرين رفع الأثقال"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-2.jpg';
-              "
+              data-fallback="assets/images/results.jpg"
             /><img
               class="s3"
               src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80"
               alt="لاعب كمال أجسام"
               loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'assets/images/about/story-3.jpg';
-              "
+              data-fallback="assets/images/why.jpg"
             />
           </div>
           <div>
@@ -1167,7 +1166,7 @@
                 aria-label="القوة والتحمل"
               >
                 <span class="pg-no">03</span
-                ><span class="pg-kind">Strength & Endurance</span>
+                ><span class="pg-kind">Strength &amp; Endurance</span>
               </div>
               <h3>القوة والتحمل</h3>
               <p class="pg-desc">
@@ -1298,7 +1297,7 @@
                 aria-label="التعافي وإعادة التأهيل"
               >
                 <span class="pg-no">06</span
-                ><span class="pg-kind">Recovery & Rehab</span>
+                ><span class="pg-kind">Recovery &amp; Rehab</span>
               </div>
               <h3>التعافي وإعادة التأهيل</h3>
               <p class="pg-desc">
@@ -1782,7 +1781,7 @@
                 <p class="art-d">خسارة الدهون ليست مجرد رقم على الميزان.</p>
               </div></a
             >
-            <a class="art rv" data-home href="article.html?id=29" data-c="nutrition"
+            <a class="art rv" data-home href="article.html?id=29" data-c="wellness"
               ><div
                 class="art-im"
                 role="img"
@@ -2303,46 +2302,6 @@
             ></a>
           </p>
         </div>
-        <script>
-          (function () {
-            var sec = document.getElementById("articles");
-            if (!sec) return;
-            var LIMIT = 4;
-            var pills = sec.querySelectorAll(".af-pill[data-f]");
-            var cards = sec.querySelectorAll(".art[data-c]");
-            var empty = sec.querySelector(".af-empty");
-            function render(f) {
-              var shown = 0;
-              cards.forEach(function (c) {
-                var ok = false;
-                if (f === "all") {
-                  ok = c.hasAttribute("data-home");
-                } else if (
-                  c.getAttribute("data-c").split(" ").indexOf(f) !== -1 &&
-                  shown < LIMIT
-                ) {
-                  ok = true;
-                }
-                c.hidden = !ok;
-                if (ok) {
-                  c.classList.add("in");
-                  shown++;
-                }
-              });
-              if (empty) empty.hidden = shown !== 0;
-            }
-            pills.forEach(function (p) {
-              p.addEventListener("click", function () {
-                pills.forEach(function (x) {
-                  var on = x === p;
-                  x.classList.toggle("on", on);
-                  x.setAttribute("aria-pressed", on ? "true" : "false");
-                });
-                render(p.getAttribute("data-f"));
-              });
-            });
-          })();
-        </script>
       </section>
       <section class="sec black ctr" aria-labelledby="h-ig">
         <div class="wrap">
@@ -2506,6 +2465,7 @@
                   name="الاسم"
                   type="text"
                   required
+                  maxlength="80"
                   autocomplete="name"
                   placeholder="اكتب اسمك الكامل" /></label
               ><label
@@ -2514,6 +2474,9 @@
                   name="الهاتف"
                   type="tel"
                   required
+                  maxlength="20"
+                  pattern="[+0-9\u0660-\u0669\s\(\)\-]{7,20}"
+                  title="أدخل رقم هاتف صحيحًا (أرقام فقط، ويمكن أن يبدأ بـ +)"
                   autocomplete="tel"
                   inputmode="tel"
                   dir="ltr"
@@ -2523,6 +2486,7 @@
                 ><input
                   name="البريد"
                   type="email"
+                  maxlength="100"
                   autocomplete="email"
                   dir="ltr"
                   placeholder="name@example.com" /></label
@@ -2552,6 +2516,7 @@
                 ><textarea
                   name="الرسالة"
                   rows="3"
+                  maxlength="600"
                   placeholder="اكتب رسالتك أو أي تفاصيل تحب أن نعرفها"
                 ></textarea></label
               ><button class="btn solid" type="submit">
@@ -2560,6 +2525,7 @@
                   ><svg aria-hidden="true"><use href="#arr" /></svg
                 ></span>
               </button>
+              <p class="cf-status" id="cstatus" role="status" aria-live="polite" hidden></p>
               <p class="cf-note">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
