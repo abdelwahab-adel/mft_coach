@@ -120,7 +120,7 @@
             height="88"
           />
         </a>
-        <ul class="links">
+        <ul class="links" id="site-menu">
        
 <li><a href="index.html"${c("home")}>الرئيسية</a></li>
 <li><a href="index.html#programs">برامجنا</a></li>
@@ -150,13 +150,12 @@
             ><svg aria-hidden="true"><use href="#arr" /></svg
           ></span>
         </a>
-        <button class="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
-            <path
-              d="M0 1h20M0 7h20M0 13h20"
-              stroke="currentColor"
-              stroke-width="2"
-            />
+        <button class="burger" aria-label="Open menu" aria-controls="site-menu">
+          <svg class="ic-menu" width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
+            <path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2" />
+          </svg>
+          <svg class="ic-x" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </button>
       </nav>`;

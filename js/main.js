@@ -126,6 +126,7 @@ if (nv) {
   const bg = nv.querySelector(".burger");
   const setOpen = (o) => {
     nv.classList.toggle("open", o);
+    document.documentElement.classList.toggle("nav-lock", o); // يقفل تمرير الصفحة خلف القائمة (CSS ≤640px فقط)
     if (bg) {
       bg.setAttribute("aria-expanded", String(o));
       bg.setAttribute("aria-label", o ? "Close menu" : "Open menu");
