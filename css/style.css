@@ -2142,6 +2142,7 @@ h1 .r {
   gap: 28px;
   grid-template-columns: 1fr;
   max-width: 1040px;
+  direction: rtl;
 }
 @media (min-width: 640px) {
   :where(body.p-trans) .tgrid {
