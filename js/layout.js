@@ -1,7 +1,7 @@
 /*
  * layout.js – الناف والفوتر في مكان واحد لكل صفحات الموقع.
  * الاستخدام في أي صفحة:
- *   <site-nav current="home|about|calculator|transformations|articles"></site-nav>
+ *   <site-nav current="home|about|calculator|transformations|articles|doctor"></site-nav>
  *   <site-footer></site-footer>
  * ويُحمَّل في <head> بدون defer:  <script src="js/layout.js"></script>
  * لتعديل روابط الناف أو الفوتر: عدّل القوالب هنا فقط.
@@ -123,12 +123,13 @@
         <ul class="links" id="site-menu">
        
 <li><a href="index.html"${c("home")}>الرئيسية</a></li>
-<li><a href="index.html#programs">برامجنا</a></li>
+<li><a href="about.html"${c("about")}>عن MFT</a></li>
+<li><a href="index.html#programs">البرامج</a></li>
+<li><a href="transformations.html"${c("transformations")}>التحولات</a></li>
 <li><a href="calculator.html"${c("calculator")}>حاسبة السعرات الحرارية</a></li>
-<li><a href="transformations.html"${c("transformations")}>قصص التحول</a></li>
 <li><a href="articles.html"${c("articles")}>المقالات</a></li>
-<li><a href="index.html#pricing">العضوية</a></li>
-<li><a href="about.html"${c("about")}>من نحن</a></li>
+  <li><a href="doctor.html"${c("doctor")}>الدكتور</a></li>
+<li><a href="index.html#contact">تواصل</a></li>
 <li class="menu-cta-li">
   <a class="menu-cta" href="${WA}" target="_blank" rel="noopener">
     <span>احجز مكانك الآن</span>
