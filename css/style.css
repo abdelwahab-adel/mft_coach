@@ -6724,6 +6724,7 @@ body.pg:where(body.p-calc) .cl-top > p {
   gap: 24px;
   max-width: 1200px;
   justify-items: center;
+  direction: rtl;
 }
 @media (min-width: 900px) {
   :where(body.p-home) #testimonials .ba-grid {
