@@ -1,5 +1,10 @@
-# رؤوس أمان على مستوى الخادم — تعمل تلقائيًا على Netlify و Cloudflare Pages.
-# على استضافة أخرى (Apache / Nginx / Vercel) انقل نفس الرؤوس إلى إعداداتها.
+# رؤوس أمان على مستوى الخادم — هذا الملف يعمل تلقائيًا على Netlify و Cloudflare Pages.
+# لباقي الاستضافات استخدم الملف المقابل (كلها تحمل نفس الرؤوس بالضبط):
+#   Apache / LiteSpeed / معظم الاستضافات المشتركة (cPanel) → .htaccess
+#   Vercel → vercel.json        Firebase Hosting → firebase.json
+#   Azure Static Web Apps → staticwebapp.config.json        IIS → web.config
+#   nginx → ملف mft-nginx.conf المرفق (خارج مجلد الموقع)
+#   GitHub Pages لا تسمح بأي رؤوس مخصصة؛ يبقى عندك فقط CSP داخل وسوم <meta> في الصفحات.
 # سياسة CSP هنا مطابقة لما في وسوم <meta> داخل الصفحات، مع إضافة frame-ancestors
 # التي لا تعمل إلا كرأس HTTP (تمنع تضمين الموقع داخل iframe في موقع آخر).
 

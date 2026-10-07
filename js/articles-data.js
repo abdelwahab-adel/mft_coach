@@ -239,7 +239,10 @@ window.ARTICLES = [
       { p: "خلال رمضان، ركز على المحافظة على الاستمرارية والمرونة. يمكن تقليل حجم التدريب مؤقتًا إذا كان النوم أو الطاقة أقل من المعتاد." },
       { p: "الأشخاص الذين لديهم أمراض مزمنة أو يتناولون أدوية أو يعانون من ظروف صحية خاصة ينبغي أن يحصلوا على توجيه طبي مناسب قبل إجراء تغييرات كبيرة في التدريب أو الغذاء." },
     ],
-    sources: [],
+    sources: [
+      ["www.northerncarealliance.nhs.uk", "https://www.northerncarealliance.nhs.uk/nca-news/top-tips-staying-healthy-during-ramadan"],
+      ["www.healthxchange.sg", "https://www.healthxchange.sg/exercise/exercise-tips/best-times-to-exercise-during-ramadan"],
+    ],
   },
   {
     id: 9,
@@ -485,7 +488,10 @@ window.ARTICLES = [
       { h2: "الخلاصة" },
       { p: "الشريك الأفضل ليس \"مراقب الحمية\"، بل شخص يساعد على خلق بيئة تجعل السلوك الصحي أكثر سهولة." },
     ],
-    sources: [],
+    sources: [
+      ["www.obesityaction.org", "https://www.obesityaction.org/community/news/community-news/family-and-weight-loss/"],
+      ["uwaterloo.ca", "https://uwaterloo.ca/news/want-help-someone-lose-weight-stop-criticizing-them"],
+    ],
   },
   {
     id: 18,
@@ -825,7 +831,9 @@ window.ARTICLES = [
       { h2: "الخلاصة" },
       { p: "الميزان أداة، وليس حكمًا نهائيًا على التقدم. الهدف هو قراءة الاتجاه على المدى الطويل." },
     ],
-    sources: [],
+    sources: [
+      ["health.clevelandclinic.org", "https://health.clevelandclinic.org/weight-fluctuations"],
+    ],
   },
   {
     id: 29,

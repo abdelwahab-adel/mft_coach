@@ -90,8 +90,20 @@
     a.href = WA + "?text=" + encodeURIComponent(waText(a));
     a.dataset.waAuto = "1";
   };
+  /* يوحّد الرقم: أي رابط wa.me في الصفحة يأخذ الرقم من WA أعلاه (ويحتفظ بنص الرسالة إن وُجد) */
+  const syncNumber = (a) => {
+    try {
+      const u = new URL(a.href),
+        n = new URL(WA).pathname;
+      if (u.hostname === "wa.me" && u.pathname !== n) {
+        u.pathname = n;
+        a.href = u.href;
+      }
+    } catch (_) {}
+  };
   const enhanceWa = () =>
     document.querySelectorAll('a[href*="wa.me/"]').forEach((a) => {
+      syncNumber(a);
       if (isBare(a)) setWa(a);
     });
   /* يتجدد وقت الضغط عشان رسالة الحاسبة والمقال تاخد آخر بيانات */
@@ -236,7 +248,7 @@ const COLS = [
         ).join("")}
       </div>
       <div class="fbar">
-        <p>© ${new Date().getFullYear()} MFT – Medical Fitness Transformation. All rights reserved.</p>
+        <p dir="ltr">© ${new Date().getFullYear()} MFT – Medical Fitness Transformation. All rights reserved.</p>
       </div>
     </footer>`;
 

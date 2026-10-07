@@ -1029,72 +1029,72 @@ h1 .r {
 }
 .progs li:nth-child(1) .thumb {
   background:
-    url(../assets/images/programs/1.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(2) .thumb {
   background:
-    url(../assets/images/programs/2.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(3) .thumb {
   background:
-    url(../assets/images/programs/3.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(4) .thumb {
   background:
-    url(../assets/images/programs/4.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(5) .thumb {
   background:
-    url(../assets/images/programs/5.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(6) .thumb {
   background:
-    url(../assets/images/programs/6.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(1) {
   background:
-    url(../assets/images/instagram/1.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(2) {
   background:
-    url(../assets/images/instagram/2.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(3) {
   background:
-    url(../assets/images/instagram/3.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(4) {
   background:
-    url(../assets/images/instagram/4.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(5) {
   background:
-    url(../assets/images/instagram/5.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(6) {
   background:
-    url(../assets/images/instagram/6.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(7) {
   background:
-    url(../assets/images/instagram/7.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(8) {
   background:
-    url(../assets/images/instagram/8.jpg) center/cover,
+    none center/cover,
     var(--g);
 }
 
@@ -1262,15 +1262,15 @@ h1 .r {
 }
 :where(body.p-home, body.p-trans) .s1 {
   grid-area: 1/1;
-  background-image: url(../assets/images/about/story-1.jpg);
+  background-image: none;
 }
 :where(body.p-home, body.p-trans) .s2 {
   grid-area: 2/1;
-  background-image: url(../assets/images/about/story-2.jpg);
+  background-image: none;
 }
 :where(body.p-home, body.p-trans) .s3 {
   grid-area: 1/2/3/3;
-  background-image: url(../assets/images/about/story-3.jpg);
+  background-image: none;
 }
 :where(body.p-home, body.p-trans) .stack::after {
   content: "";
@@ -1513,31 +1513,31 @@ h1 .r {
 :where(body.p-home, body.p-trans) .ggrid > .g1 {
   --a: #3a1410;
   background-image:
-    url(../assets/images/about/gallery-1.jpg),
+    none,
     linear-gradient(145deg, #3a1410, #0a0a0a);
 }
 :where(body.p-home, body.p-trans) .ggrid > .g2 {
   --a: #1c1c1c;
   background-image:
-    url(../assets/images/about/gallery-2.jpg),
+    none,
     linear-gradient(145deg, #1c1c1c, #0a0a0a);
 }
 :where(body.p-home, body.p-trans) .ggrid > .g3 {
   --a: #2a1010;
   background-image:
-    url(../assets/images/about/gallery-3.jpg),
+    none,
     linear-gradient(145deg, #2a1010, #0a0a0a);
 }
 :where(body.p-home, body.p-trans) .ggrid > .g4 {
   --a: #14141f;
   background-image:
-    url(../assets/images/about/gallery-4.jpg),
+    none,
     linear-gradient(145deg, #14141f, #0a0a0a);
 }
 :where(body.p-home, body.p-trans) .ggrid > .g5 {
   --a: #2a1a10;
   background-image:
-    url(../assets/images/about/gallery-5.jpg),
+    none,
     linear-gradient(145deg, #2a1a10, #0a0a0a);
 }
 :where(body.p-home, body.p-trans) .cta2 {
@@ -1619,25 +1619,25 @@ h1 .r {
 }
 :where(body.p-home, body.p-trans) .pc:nth-child(1) .ph {
   background:
-    url(../assets/images/about/team-1.jpg) center/cover,
+    none center/cover,
     var(--sil) center 55%/48% no-repeat,
     linear-gradient(160deg, #2c2c2c, #0b0b0b);
 }
 :where(body.p-home, body.p-trans) .pc:nth-child(2) .ph {
   background:
-    url(../assets/images/about/team-2.jpg) center/cover,
+    none center/cover,
     var(--sil) center 55%/48% no-repeat,
     linear-gradient(160deg, #2c2c2c, #0b0b0b);
 }
 :where(body.p-home, body.p-trans) .pc:nth-child(3) .ph {
   background:
-    url(../assets/images/about/team-3.jpg) center/cover,
+    none center/cover,
     var(--sil) center 55%/48% no-repeat,
     linear-gradient(160deg, #2c2c2c, #0b0b0b);
 }
 :where(body.p-home, body.p-trans) .pc:nth-child(4) .ph {
   background:
-    url(../assets/images/about/team-4.jpg) center/cover,
+    none center/cover,
     var(--sil) center 55%/48% no-repeat,
     linear-gradient(160deg, #2c2c2c, #0b0b0b);
 }
@@ -2220,6 +2220,7 @@ h1 .r {
 }
 :where(body.p-trans) .trow {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
@@ -2491,25 +2492,25 @@ h1 .r {
 }
 .progs li:nth-child(2) .thumb {
   background:
-    url(../assets/images/programs/2.jpg) center/cover,
-    url(../assets/images/about/story-3.jpg) center 20% / cover,
+    none center/cover,
+    none center 20% / cover,
     var(--g);
 }
 .progs li:nth-child(3) .thumb {
   background:
-    url(../assets/images/programs/3.jpg) center/cover,
-    url(../assets/images/about/story-2.jpg) center/cover,
+    none center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(4) .thumb {
   background:
-    url(../assets/images/programs/4.jpg) center/cover,
-    url(../assets/images/about/story-1.jpg) center/cover,
+    none center/cover,
+    none center/cover,
     var(--g);
 }
 .progs li:nth-child(5) .thumb {
   background:
-    url(../assets/images/programs/5.jpg) center/cover,
+    none center/cover,
     url(../assets/images/why.jpg) center/cover,
     var(--g);
 }
@@ -2578,50 +2579,50 @@ h1 .r {
 }
 .rail .tile:nth-child(1) {
   background:
-    url(../assets/images/instagram/1.jpg) center/cover,
-    url(../assets/images/about/story-1.jpg) center/cover,
+    none center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(2) {
   background:
-    url(../assets/images/instagram/2.jpg) center/cover,
-    url(../assets/images/about/story-3.jpg) center/cover,
+    none center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(3) {
   background:
-    url(../assets/images/instagram/3.jpg) center/cover,
+    none center/cover,
     url(../assets/images/why.jpg) center/cover,
     var(--g);
 }
 .rail .tile:nth-child(4) {
   background:
-    url(../assets/images/instagram/4.jpg) center/cover,
-    url(../assets/images/about/story-2.jpg) center/cover,
+    none center/cover,
+    none center/cover,
     var(--g);
 }
 .rail .tile:nth-child(5) {
   background:
-    url(../assets/images/instagram/5.jpg) center/cover,
+    none center/cover,
     url(../assets/images/hero-bg.jpg) 75% 20% / cover,
     var(--g);
 }
 .rail .tile:nth-child(6) {
   background:
-    url(../assets/images/instagram/6.jpg) center/cover,
+    none center/cover,
     url(../assets/images/logo.jpg) center/cover,
     var(--g);
 }
 .rail .tile:nth-child(7) {
   background:
-    url(../assets/images/instagram/7.jpg) center/cover,
-    url(../assets/images/about/story-2.jpg) center 30% / cover,
+    none center/cover,
+    none center 30% / cover,
     var(--g);
 }
 .rail .tile:nth-child(8) {
   background:
-    url(../assets/images/instagram/8.jpg) center/cover,
-    url(../assets/images/about/story-1.jpg) center 30% / cover,
+    none center/cover,
+    none center 30% / cover,
     var(--g);
 }
 .cta2 {
@@ -2662,98 +2663,98 @@ h1 .r {
 }
 .progs li:nth-child(1) .thumb {
   background:
-    url(../assets/images/programs/1.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1634492859027-11de47469325?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .progs li:nth-child(2) .thumb {
   background:
-    url(../assets/images/programs/2.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .progs li:nth-child(3) .thumb {
   background:
-    url(../assets/images/programs/3.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .progs li:nth-child(4) .thumb {
   background:
-    url(../assets/images/programs/4.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .progs li:nth-child(5) .thumb {
   background:
-    url(../assets/images/programs/5.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .progs li:nth-child(6) .thumb {
   background:
-    url(../assets/images/programs/6.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .rail .tile:nth-child(1) {
   background:
-    url(../assets/images/instagram/1.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80")
       center 25% / cover,
     var(--g);
 }
 .rail .tile:nth-child(2) {
   background:
-    url(../assets/images/instagram/2.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1634492859027-11de47469325?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .rail .tile:nth-child(3) {
   background:
-    url(../assets/images/instagram/3.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .rail .tile:nth-child(4) {
   background:
-    url(../assets/images/instagram/4.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1632781297772-1d68f375d878?auto=format&fit=crop&w=900&q=80")
       center 25% / cover,
     var(--g);
 }
 .rail .tile:nth-child(5) {
   background:
-    url(../assets/images/instagram/5.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .rail .tile:nth-child(6) {
   background:
-    url(../assets/images/instagram/6.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80")
       center/cover,
     var(--g);
 }
 .rail .tile:nth-child(7) {
   background:
-    url(../assets/images/instagram/7.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80")
       center 60% / cover,
     var(--g);
 }
 .rail .tile:nth-child(8) {
   background:
-    url(../assets/images/instagram/8.jpg) center/cover,
+    none center/cover,
     url("https://images.unsplash.com/photo-1526407297627-d845b359a55b?auto=format&fit=crop&w=900&q=80")
       center 30% / cover,
     var(--g);
@@ -2777,11 +2778,11 @@ h1 .r {
 }
 .nav.sc {
   height: 76px;
-  background: rgba(8, 8, 8, 0.82);
+  background: rgba(255, 255, 255, 0.97); /* ناف أبيض عند التمرير */
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 .nav .logo img {
   transition:
@@ -7453,12 +7454,12 @@ body.p-home #method .pillars > li:nth-child(2) {
   --photo-web: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80");
 }
 body.p-home #method .pillars > li:nth-child(3) {
-  --photo-local: url(../assets/images/method/3.jpg);
+  --photo-local: none;
   --photo-pos: 70% center;
   --photo-web: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80");
 }
 body.p-home #method .pillars > li:nth-child(4) {
-  --photo-local: url(../assets/images/method/4.jpg);
+  --photo-local: none;
   --photo-pos: center 25%;
   --photo-web: url("https://images.unsplash.com/photo-1634492859027-11de47469325?auto=format&fit=crop&w=900&q=80");
 }
@@ -7643,13 +7644,13 @@ body.p-home #method .pillars .chips li {
 .oc-card:nth-child(1) {
   --photo-local: url(../assets/images/coaching/1.jpg);
   --photo-web: url("https://images.unsplash.com/photo-1587996597484-04743eeb56b4?auto=format&fit=crop&w=900&q=80");
-  --photo-brand: url(../assets/images/about/story-1.jpg);
+  --photo-brand: none;
   --photo-pos: center 20%;
 }
 .oc-card:nth-child(2) {
   --photo-local: url(../assets/images/coaching/2.jpg);
   --photo-web: url("https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?auto=format&fit=crop&w=900&q=80");
-  --photo-brand: url(../assets/images/about/story-2.jpg);
+  --photo-brand: none;
   --photo-pos: center 30%;
 }
 .oc-card:nth-child(3) {
@@ -7667,7 +7668,7 @@ body.p-home #method .pillars .chips li {
 .oc-card:nth-child(5) {
   --photo-local: url(../assets/images/coaching/5.jpg);
   --photo-web: url("https://images.unsplash.com/photo-1758922769578-68c5ba000d87?auto=format&fit=crop&w=900&q=80");
-  --photo-brand: url(../assets/images/about/story-3.jpg);
+  --photo-brand: none;
   --photo-pos: center 20%;
 }
 .oc-card:nth-child(6) {
@@ -8970,15 +8971,15 @@ body.p-about .ab-bel .abm-photo::after { bottom: auto; top: 0; height: 30%; }
 }
 :where(body.p-about) .s1 {
   grid-area: 1/1;
-  background-image: url(../assets/images/about/story-1.jpg);
+  background-image: none;
 }
 :where(body.p-about) .s2 {
   grid-area: 2/1;
-  background-image: url(../assets/images/about/story-2.jpg);
+  background-image: none;
 }
 :where(body.p-about) .s3 {
   grid-area: 1/2/3/3;
-  background-image: url(../assets/images/about/story-3.jpg);
+  background-image: none;
 }
 :where(body.p-about) .stack::after {
   content: "";
@@ -9259,6 +9260,37 @@ body.p-about #about .stack::after {
   outline: 2px solid #fff;
   outline-offset: 4px;
   border-radius: 8px;
+}
+
+/* ===== الناف بعد التمرير (.nav.sc): خلفية بيضاء ⇒ روابط داكنة =====
+   :not(.open) حتى تبقى قائمة الجوال المفتوحة داكنة بروابط بيضاء كما هي */
+.nav.sc:not(.open) {
+  color: #14181c;
+}
+.nav.sc:not(.open) a {
+  color: inherit; /* الروابط ترث اللون الداكن */
+}
+.nav.sc:not(.open) .links a:hover,
+.nav.sc:not(.open) .links a[aria-current] {
+  color: #c8161d; /* أحمر أغمق من لون البراند ليحقق تباين 4.5:1 على الأبيض */
+  opacity: 1;
+}
+.nav.sc:not(.open) .pill {
+  color: #fff; /* نص زر الحجز يبقى أبيض على الأحمر */
+}
+.nav.sc:not(.open) .burger {
+  color: #14181c;
+}
+.nav.sc:not(.open) .burger:focus-visible,
+.nav.sc:not(.open) .links a:focus-visible,
+.nav.sc:not(.open) .pill:focus-visible,
+.nav.sc:not(.open) .logo:focus-visible {
+  outline-color: #14181c;
+}
+/* قائمة الجوال المفتوحة أثناء التمرير: نفس مظهرها الداكن السابق */
+.nav.sc.open {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 @media (max-width: 1100px) {
   .nav.open .links {
@@ -9988,5 +10020,46 @@ body .ft .fbrand .slog { margin: 0 0 16px; font-size: 0.66rem; letter-spacing: 0
   .hero .cta {
     animation: none;
     transition: none;
+  }
+}
+
+/* ملاحظة صغيرة (إخلاء مسؤولية) — تأخذ لون النص من القسم الموجودة فيه فتصلح للخلفيات الفاتحة والداكنة */
+.mft-note {
+  max-width: 64ch;
+  margin: 40px auto 0;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  text-align: center;
+  color: inherit;
+  opacity: 0.72;
+}
+
+/* =====================================================================
+   Online Coaching — عرض الهاتف (≤ 699px: عمود واحد)
+   الصورة تظهر كاملة في أعلى الكارت بلا نص، والنص يقع على لوحة داكنة تحتها،
+   فيبقى مقروءًا فوق أي صورة (كان يقع فوق مناطق فاتحة: أكل/سماء/إضاءة زرقاء).
+   ===================================================================== */
+@media (max-width: 699px) {
+  .oc-card {
+    --shade: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.3) 96px,
+      rgba(0, 0, 0, 0.92) 168px,
+      rgba(0, 0, 0, 0.96) 100%
+    );
+    min-height: 0;
+    padding: 156px 18px 22px;
+  }
+  .oc-desc {
+    color: #f0f0f0;
+    line-height: 1.8;
+  }
+}
+/* شاشات اللمس: لا تأثير hover (كان يبقى «عالقًا» بعد اللمس: الكارت يرتفع بتوهج أحمر) */
+@media (hover: none) {
+  .oc-card:hover {
+    transform: none;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
   }
 }

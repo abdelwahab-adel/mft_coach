@@ -166,10 +166,15 @@
     if (!GOALS[v.goal]) e.goal = "اختر هدفك.";
     return { ok: !Object.keys(e).length, e, v };
   };
-  /* الحساب: Mifflin–St Jeor ثم TDEE ثم الهدف ثم المغذيات */
+  /* الحساب: BMR ثم TDEE ثم الهدف ثم المغذيات.
+     BMR: Katch–McArdle عند إدخال نسبة الدهون (370 + 21.6 × الكتلة الخالية من الدهون)،
+     وإلا Mifflin–St Jeor كما كان. */
   const compute = (v) => {
-    const { sex, age, height: h, weight: w, activity, goal } = v;
-    const bmr = 10 * w + 6.25 * h - 5 * age + (sex === "male" ? 5 : -161),
+    const { sex, age, height: h, weight: w, activity, goal, bodyFat } = v;
+    const bmr =
+        bodyFat != null
+          ? 370 + 21.6 * w * (1 - bodyFat / 100)
+          : 10 * w + 6.25 * h - 5 * age + (sex === "male" ? 5 : -161),
       tdee = bmr * activity;
     const floor = Math.max(bmr, sex === "male" ? 1500 : 1200);
     let t;
@@ -237,8 +242,8 @@
             : "لم يُطبَّق عجز إضافي لأن احتياجك قريب من الحد الأدنى المناسب للسعرات.";
     $("r-caption").textContent =
       "تقدير السعرات اليومية وفقًا للهدف الذي اخترته" +
-      (v.bodyFat !== null
-        ? ". نسبة الدهون المدخلة لم تدخل في الحساب، فالتقدير يعتمد على معادلة ميفلين–سانت جيور."
+      (v.bodyFat != null
+        ? ". حُسب معدل الأيض الأساسي بمعادلة كاتش–ماكاردل اعتمادًا على نسبة الدهون التي أدخلتها."
         : ".");
     const al = $("r-alert");
     if (v.goal === "fat-loss" && r.bmi < 18.5) {
