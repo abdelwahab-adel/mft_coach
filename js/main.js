@@ -167,3 +167,49 @@ if (nv) {
   };
   mq.addEventListener ? mq.addEventListener("change", onMq) : mq.addListener(onMq);
 }
+
+/* الهاتف (≤ 699px): بطاقات «التدريب الأونلاين» و«المنهجية» تُطوى ويُفتح تفصيلها بالضغط.
+   عنوان كل بطاقة يصير زرًّا حقيقيًا (لوحة المفاتيح وقارئات الشاشة)، والبطاقة كلها قابلة للضغط.
+   خارج الهاتف (أو بدون JS) تُزال كل التعديلات ويبقى الشكل كما كان. */
+(() => {
+  const GROUPS = [
+    { cards: "#coaching .oc-card", hide: ".oc-desc, .oc-chips" },
+    { cards: "#method .pillars > li", hide: ".chips" },
+  ];
+  const mq = matchMedia("(max-width: 699px)");
+  let seq = 0;
+  const enable = () =>
+    GROUPS.forEach((g) =>
+      document.querySelectorAll(g.cards).forEach((card) => {
+        const h = card.querySelector("h3"),
+          parts = [...card.querySelectorAll(g.hide)];
+        if (card.classList.contains("tg") || !h || !parts.length) return;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tg-btn";
+        btn.setAttribute("aria-expanded", "false");
+        parts.forEach((p) => p.id || (p.id = "tg-" + ++seq));
+        btn.setAttribute("aria-controls", parts.map((p) => p.id).join(" "));
+        while (h.firstChild) btn.appendChild(h.firstChild);
+        h.appendChild(btn);
+        card.classList.add("tg");
+        btn.addEventListener("click", () => {
+          btn.setAttribute("aria-expanded", String(card.classList.toggle("open")));
+        });
+      }),
+    );
+  const disable = () =>
+    document.querySelectorAll(".tg").forEach((card) => {
+      const btn = card.querySelector(".tg-btn");
+      if (btn) {
+        const h = btn.parentNode;
+        while (btn.firstChild) h.insertBefore(btn.firstChild, btn);
+        btn.remove();
+      }
+      card.classList.remove("tg", "open");
+    });
+  const sync = () => (mq.matches ? enable() : disable());
+  sync();
+  /* Safari القديم (< 14) لا يدعم addEventListener على MediaQueryList */
+  mq.addEventListener ? mq.addEventListener("change", sync) : mq.addListener(sync);
+})();

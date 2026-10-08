@@ -9263,34 +9263,29 @@ body.p-about #about .stack::after {
 }
 
 /* ===== الناف بعد التمرير (.nav.sc): خلفية بيضاء ⇒ روابط داكنة =====
-   :not(.open) حتى تبقى قائمة الجوال المفتوحة داكنة بروابط بيضاء كما هي */
-.nav.sc:not(.open) {
+   ويشمل حالة القائمة المفتوحة (.open) لأنها صارت بيضاء أيضًا */
+:is(.nav.sc, .nav.open) {
   color: #14181c;
 }
-.nav.sc:not(.open) a {
+:is(.nav.sc, .nav.open) a {
   color: inherit; /* الروابط ترث اللون الداكن */
 }
-.nav.sc:not(.open) .links a:hover,
-.nav.sc:not(.open) .links a[aria-current] {
+:is(.nav.sc, .nav.open) .links a:hover,
+:is(.nav.sc, .nav.open) .links a[aria-current] {
   color: #c8161d; /* أحمر أغمق من لون البراند ليحقق تباين 4.5:1 على الأبيض */
   opacity: 1;
 }
-.nav.sc:not(.open) .pill {
+:is(.nav.sc, .nav.open) .pill {
   color: #fff; /* نص زر الحجز يبقى أبيض على الأحمر */
 }
-.nav.sc:not(.open) .burger {
+:is(.nav.sc, .nav.open) .burger {
   color: #14181c;
 }
-.nav.sc:not(.open) .burger:focus-visible,
-.nav.sc:not(.open) .links a:focus-visible,
-.nav.sc:not(.open) .pill:focus-visible,
-.nav.sc:not(.open) .logo:focus-visible {
+:is(.nav.sc, .nav.open) .burger:focus-visible,
+:is(.nav.sc, .nav.open) .links a:focus-visible,
+:is(.nav.sc, .nav.open) .pill:focus-visible,
+:is(.nav.sc, .nav.open) .logo:focus-visible {
   outline-color: #14181c;
-}
-/* قائمة الجوال المفتوحة أثناء التمرير: نفس مظهرها الداكن السابق */
-.nav.sc.open {
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 @media (max-width: 1100px) {
   .nav.open .links {
@@ -10061,5 +10056,249 @@ body .ft .fbrand .slog { margin: 0 0 16px; font-size: 0.66rem; letter-spacing: 0
   .oc-card:hover {
     transform: none;
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* =====================================================================
+   بطاقات قابلة للطيّ على الهاتف — التفاصيل مخفية وتظهر بالضغط
+   (الكلاس .tg يضيفه main.js على الهاتف فقط؛ بدون JS يبقى كل المحتوى ظاهرًا)
+   ===================================================================== */
+.tg-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-shadow: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tg-btn::after {
+  content: ""; /* يمدّ منطقة الضغط على البطاقة كلها */
+  position: absolute;
+  inset: 0;
+}
+.tg-btn:focus-visible {
+  outline: none;
+}
+.tg:has(.tg-btn:focus-visible) {
+  outline: 2px solid #fff;
+  outline-offset: -5px;
+}
+/* علامة (+) أعلى يسار البطاقة، تتحول إلى (×) عند الفتح */
+.tg::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  background:
+    linear-gradient(#fff, #fff) center / 12px 2px no-repeat,
+    linear-gradient(#fff, #fff) center / 2px 12px no-repeat,
+    rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  transition: transform 0.35s ease;
+}
+.tg.open::after {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 699px) {
+  /* بطاقات «المنهجية»: نفس معالجة بطاقات Online Coaching (صورة أعلى + لوحة داكنة للنص) */
+  body.p-home #method .pillars > li.tg {
+    --shade: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.3) 96px,
+      rgba(0, 0, 0, 0.92) 168px,
+      rgba(0, 0, 0, 0.96) 100%
+    );
+    min-height: 0;
+    padding: 156px 18px 24px;
+  }
+  /* الحالة المطوية. المحددات أقوى من قواعد hover/focus-within الموجودة، فلا تفتح البطاقة إلا بـ .open */
+  .oc-card.tg:not(.open) .oc-desc,
+  .oc-card.tg:not(.open) .oc-chips,
+  body.p-home #method .pillars > li.tg:not(.open) .chips {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      max-height 0.45s ease,
+      margin-top 0.35s ease,
+      opacity 0.25s ease,
+      visibility 0s linear 0.45s;
+  }
+  .oc-card.tg.open .oc-desc,
+  .oc-card.tg.open .oc-chips,
+  body.p-home #method .pillars > li.tg.open .chips {
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      max-height 0.5s ease,
+      margin-top 0.35s ease,
+      opacity 0.35s ease 0.08s,
+      visibility 0s;
+  }
+  .oc-card.tg.open .oc-desc {
+    max-height: 320px;
+    margin-top: 12px;
+  }
+  .oc-card.tg.open .oc-chips,
+  body.p-home #method .pillars > li.tg.open .chips {
+    max-height: 460px;
+    margin-top: 14px;
+  }
+}
+/* شاشات اللمس: لا تأثير hover «عالق» على بطاقات المنهجية */
+@media (hover: none) {
+  body.p-home #method .pillars > li:hover {
+    transform: none;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tg::after,
+  .oc-card.tg .oc-desc,
+  .oc-card.tg .oc-chips,
+  body.p-home #method .pillars > li.tg .chips {
+    transition: none !important;
+  }
+}
+
+/* =====================================================================
+   قائمة الجوال (≤ 1100px): كارت أبيض عائم تحت الشريط
+   عناصر عريضة بمسافات مريحة، الصفحة الحالية بلون البراند وخط تحتها بعرض الكارت،
+   وزر الحجز حبّة في الأسفل. (الشريط نفسه يصير أبيض أثناء الفتح: قواعد :is(.nav.sc,.nav.open) أعلاه)
+   ===================================================================== */
+@keyframes m-menu-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1100px) {
+  .nav.open {
+    background: rgba(255, 255, 255, 0.97);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  .nav.open .links {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 20px;
+    left: auto;
+    width: min(400px, calc(100vw - 40px));
+    height: auto;
+    max-height: calc(100vh - 100% - 28px);
+    max-height: calc(100dvh - 100% - 28px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 8px 22px 22px;
+    background: #fff;
+    border: 0;
+    border-radius: 22px;
+    box-shadow:
+      0 22px 60px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    transform-origin: top right;
+    animation: m-menu-pop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .nav.open .links li {
+    border: 0;
+    animation: none;
+  }
+  .nav.open .links a,
+  .nav.open .links a[aria-current] {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    padding: 14px 0 12px;
+    border-bottom: 3px solid transparent;
+    color: #14181c;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0;
+    opacity: 1;
+  }
+  .nav.open .links a::before {
+    display: none;
+  }
+  .nav.open .links a[aria-current]::after {
+    content: none; /* بدل النقطة القديمة: الخط تحت العنصر */
+  }
+  .nav.open .links a:hover {
+    color: #c8161d;
+    transform: none;
+  }
+  .nav.open .links a[aria-current] {
+    color: #c8161d;
+    border-bottom-color: var(--brand-red, #e62b27);
+  }
+}
+@media (max-width: 640px) {
+  .nav.open .links {
+    left: 14px;
+    right: 14px;
+    width: auto;
+  }
+  /* زر الحجز: حبّة في أسفل الكارت */
+  .nav.open .links .menu-cta-li {
+    display: block;
+    margin: 14px 0 0;
+    padding: 0;
+    border: 0;
+  }
+  .nav.open .links a.menu-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: auto;
+    min-width: 66%;
+    height: 52px;
+    padding: 0 22px 0 6px;
+    border: 0;
+    color: #fff;
+    font-size: 1.02rem;
+  }
+  .nav.open .links a.menu-cta:hover {
+    color: #fff;
+  }
+  .nav.open .links a.menu-cta .dot {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav.open .links {
+    animation: none;
   }
 }
