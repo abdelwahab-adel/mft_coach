@@ -466,7 +466,7 @@ h1 .r {
   --bg-dark: #121212;
   --bg-dark-2: #1a1a1a;
   --bg-light: #f5f5f5;
-  --on-dark-body: #c9c9c9;
+  --on-dark-body: #c9c9c9; 
   --on-light: #0d0d0d;
   --on-light-body: #4a4a4a;
   --head: "Barlow Condensed", "Anton", "Arial Narrow", sans-serif;
@@ -9545,7 +9545,7 @@ body.p-calc .phead > :not(nav) {
    لم يُغيَّر: الهيرو، الشريط الأحمر، مقالات (D أصلًا)، إنستجرام (G أصلًا)، "هل أنت مستعد لتحولك؟" (cta2)، الفوتر. */
 body.p-home {
   --bg-w: #fff;
-  --bg-g: #ececec;
+  --bg-g: #eef0f3;
   --bg-d: #f5f5f5 radial-gradient(circle, rgba(0, 0, 0, 0.09) 1px, transparent 1.3px) 0 0 / 22px 22px;
 }
 body.p-home :is(.stats, #coaching, #method, #results, #life) {
