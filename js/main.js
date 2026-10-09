@@ -214,7 +214,13 @@ if (nv) {
      والتمرير السلس قد يستقر بعد القسم بمئات البكسلات. نعيد ضبط الموضع على القسم بقفزة فورية
      بعد الطيّ وبعد اكتمال التحميل، ما لم يبدأ المستخدم التمرير بنفسه. */
   if (location.hash.length > 1) {
-    const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    let id = location.hash.slice(1);
+    try {
+      id = decodeURIComponent(id);
+    } catch (_) {
+      /* هاش غير صالح (مثل #%) كان يرمي URIError ويوقف باقي السكربت */
+    }
+    const t = document.getElementById(id);
     let touched = false;
     ["wheel", "touchstart", "keydown", "mousedown"].forEach((e) =>
       addEventListener(e, () => (touched = true), { once: true, passive: true }),

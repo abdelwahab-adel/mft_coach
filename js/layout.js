@@ -14,7 +14,7 @@
   /* ---------- الواتساب: كل الرسائل هنا ----------
    * أي رابط wa.me بدون ?text= بياخد رسالة تلقائياً حسب مكانه في الصفحة.
    * الروابط اللي فيها ?text= (كروت البرامج، فورم التواصل) بتفضل زي ما هي.
-   * لتحديد نوع الرسالة يدوياً: <a data-wa="consult|start|pricing|general">
+   * لتحديد نوع الرسالة يدوياً: <a data-wa="consult|start|general">
    */
   const WA = "https://wa.me/201155822360";
   window.MFT_WA = WA; // مصدر واحد لرقم الواتساب (يستخدمه main.js أيضًا)
@@ -23,7 +23,6 @@
   const MSG = {
     consult: GREET + "أرغب في حجز استشارة." + FORM,
     start: GREET + "أرغب في بدء رحلتي معكم في Online Medical Fitness Coaching." + FORM,
-    pricing: GREET + "أرغب في الاستفسار عن باقات Online Medical Fitness Coaching وأسعارها." + FORM,
     general: GREET + "أرغب في الاستفسار عن برامج Online Medical Fitness Coaching.",
     doctor: GREET + "أرغب في حجز استشارة مع د. محمد الريس." + FORM,
     transformations:
@@ -65,9 +64,7 @@
     const t = (a.textContent || "").toLowerCase();
     const k =
       a.dataset.wa ||
-      (a.closest("#pricing")
-        ? "pricing"
-        : /ابدأ|start/.test(t)
+      (/ابدأ|start/.test(t)
           ? "start"
           : /استشار|احجز|consult|book/.test(t)
             ? "consult"

@@ -14,8 +14,8 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  # فعّل HSTS فقط بعد التأكد أن الموقع (وكل نطاقاته الفرعية) يعمل بـ HTTPS:
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # HSTS يخص نطاق الموقع هذا فقط (بدون includeSubDomains)، فلا يؤثر على أي نطاق فرعي. فعّله بعد التأكد أن الموقع يعمل بـ HTTPS:
+  Strict-Transport-Security: max-age=31536000
 
 # كاش معتدل: أسماء الملفات غير مُبصَّمة (hash)، فلا نستخدم immutable حتى تظهر أي صورة/ملف يُستبدل.
 /assets/*
