@@ -84,7 +84,7 @@ if (cf) {
         .filter(([, v]) => v)
         .map(([k, v]) => "• " + k + ": " + v)
         .join("\n"),
-      msg = "مرحبًا MFT 👋\nأرغب في بدء رحلتي معكم.\n\n" + t,
+      msg = "مرحبًا MFT 👋\nأرغب في بدء رحلتي معكم في Online Medical Fitness Coaching.\n\n" + t,
       u = WA_BASE + "?text=" + encodeURIComponent(msg),
       a = document.createElement("a");
     a.href = u;

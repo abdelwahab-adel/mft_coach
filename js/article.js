@@ -7,7 +7,7 @@
 (() => {
   const ARTICLES = window.ARTICLES || [];
   const CATS = window.ARTICLE_CATS || {};
-  const SITE = "MFT";
+  const SITE = "MFT – Online Medical Fitness Coaching";
   const BLOCKS = ["h2", "h3", "p"];
 
   const $ = (id) => document.getElementById(id);

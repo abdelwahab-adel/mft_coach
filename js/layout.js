@@ -22,9 +22,9 @@
   const FORM = "\n\nالاسم:\nهدفي:";
   const MSG = {
     consult: GREET + "أرغب في حجز استشارة." + FORM,
-    start: GREET + "أرغب في بدء رحلتي معكم." + FORM,
-    pricing: GREET + "أرغب في الاستفسار عن العضوية والأسعار." + FORM,
-    general: GREET + "أرغب في الاستفسار عن خدماتكم.",
+    start: GREET + "أرغب في بدء رحلتي معكم في Online Medical Fitness Coaching." + FORM,
+    pricing: GREET + "أرغب في الاستفسار عن باقات Online Medical Fitness Coaching وأسعارها." + FORM,
+    general: GREET + "أرغب في الاستفسار عن برامج Online Medical Fitness Coaching.",
     doctor: GREET + "أرغب في حجز استشارة مع د. محمد الريس." + FORM,
     transformations:
       GREET + "شاهدت نتائج التحولات على موقعكم وأرغب في بدء رحلتي." + FORM,
@@ -235,7 +235,7 @@ const COLS = [
             loading="lazy"
           />
           <p class="ap" lang="ar" dir="rtl">
-            نساعدك على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
+            نساعدك أونلاين على بناء جسم أقوى، وصحة أفضل، وعادات تستطيع الاستمرار عليها.
           </p>
           <p class="fdoc">
             <b lang="ar">د. محمد الريس</b>
