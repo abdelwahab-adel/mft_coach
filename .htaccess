@@ -1,0 +1,21 @@
+# رؤوس أمان وكاش — Apache / LiteSpeed (يتطلب mod_headers). نفس محتوى _headers.
+# مغلّف بـ IfModule: إن لم يكن mod_headers متاحًا يتجاهله الخادم ولا يتعطل الموقع.
+# منع عرض محتويات المجلدات (directory listing).
+# إن ظهر خطأ 500 بعد الرفع (استضافة لا تسمح بـ Options داخل .htaccess) احذف السطر التالي فقط.
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  <FilesMatch "\.(?i:jpe?g|png|webp|gif|svg|ico|avif)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.(?i:css|js)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
