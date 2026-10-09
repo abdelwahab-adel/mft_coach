@@ -7189,7 +7189,7 @@ body.p-home #programs .pg-info dd {
   color: var(--on-light-body);
 }
 body.p-home #programs .pg-lbl {
-  display: none;
+  display: block;
   margin: 6px 6px 8px;
   padding-top: 12px;
   border-top: 1px solid var(--hl);
@@ -7199,32 +7199,26 @@ body.p-home #programs .pg-lbl {
   color: var(--red-ink);
 }
 body.p-home #programs .prog .chips {
-  display: none;
   margin: 0 6px;
   justify-content: flex-start;
 }
 body.p-home #programs .pg-link {
-  /* display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: auto 6px 0;
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: var(--red-ink);
-  transition: gap 0.25s; */
-
-  display: inline-flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    margin: auto 6px 0;
     font-weight: 800;
     font-size: 0.95rem;
-    background: red;
     color: white;
-    border-radius: inherit;
     width: 200px;
     height: 38px;
     padding-right: 12px;
+    gap: 8px;
+    margin: auto 6px 0px;
+    background: red;
+    border-radius: inherit;
+
+  margin-right: auto;
+  margin-left: auto;
+
 }
 body.p-home #programs .pg-link svg {
   width: 16px;
@@ -7238,6 +7232,9 @@ body.p-home #programs .pg-link svg {
 body.p-home #programs .pg-link:hover {
   gap: 12px;
 }
+
+
+
 body.p-home #programs .pg-foot {
   display: flex;
   flex-wrap: wrap;
@@ -9328,6 +9325,7 @@ body.p-about #programs .prog .thumb {
   position: relative;
   overflow: hidden;
   flex: none;
+
 }
 body.p-about #programs .prog .thumb::after {
   content: "";
@@ -9406,16 +9404,24 @@ body.p-about #programs .prog .chips {
   margin: 0 6px;
   justify-content: flex-start;
 }
+
 body.p-about #programs .pg-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: auto 6px 0;
-  padding-top: 18px;
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: var(--red-ink);
-  transition: gap 0.25s;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: white;
+    width: 200px;
+    height: 38px;
+    padding-right: 12px;
+    gap: 8px;
+    margin: auto 6px 0px;
+    background: red;
+    border-radius: inherit;
+
+  margin-right: auto;
+  margin-left: auto;
+
 }
 body.p-about #programs .pg-link svg {
   width: 16px;
@@ -10357,8 +10363,8 @@ body .ft .fbrand .slog { margin: 0 0 16px; font-size: 0.66rem; letter-spacing: 0
   background: #25d366;
 }
 .fab-wa svg {
+color: white;
   fill: currentColor;
-  color: white;
 }
 .fab-wa:hover {
   transform: translateY(-3px);

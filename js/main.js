@@ -210,6 +210,26 @@ if (nv) {
     });
   const sync = () => (mq.matches ? enable() : disable());
   sync();
+  /* فتح الصفحة برابط مثل index.html#contact: طيّ البطاقات على الهاتف وتحميل الصور يغيّران ارتفاع ما فوق القسم،
+     والتمرير السلس قد يستقر بعد القسم بمئات البكسلات. نعيد ضبط الموضع على القسم بقفزة فورية
+     بعد الطيّ وبعد اكتمال التحميل، ما لم يبدأ المستخدم التمرير بنفسه. */
+  if (location.hash.length > 1) {
+    const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    let touched = false;
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach((e) =>
+      addEventListener(e, () => (touched = true), { once: true, passive: true }),
+    );
+    const align = () => {
+      if (!t || touched) return;
+      const de = document.documentElement,
+        prev = de.style.scrollBehavior;
+      de.style.scrollBehavior = "auto";
+      t.scrollIntoView();
+      de.style.scrollBehavior = prev;
+    };
+    requestAnimationFrame(align);
+    document.readyState === "complete" ? align() : addEventListener("load", align, { once: true });
+  }
   /* Safari القديم (< 14) لا يدعم addEventListener على MediaQueryList */
   mq.addEventListener ? mq.addEventListener("change", sync) : mq.addListener(sync);
 })();
