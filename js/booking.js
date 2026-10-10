@@ -182,7 +182,7 @@
               true
             )}
             ${select("age", "السن", "cal", "السن", AGES, "اختر عمرك")}
-            ${select("gender", "الجنس (اختياري)", "user", "الجنس", GENDERS, "—", true)}
+            ${select("gender", "الجنس (اختياري)", "user", "الجنس", GENDERS, "", true)}
             ${select("weight", "الوزن (كجم)", "scale", "الوزن", WEIGHTS, "اختر وزنك")}
             ${select("height", "الطول (سم)", "ruler", "الطول", HEIGHTS, "اختر طولك")}
           </div>
