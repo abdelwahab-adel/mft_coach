@@ -60,18 +60,6 @@ if (cf) {
       .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
       .trim()
       .slice(0, max);
-  /* الهاتف: 7–15 رقمًا فعليًا (يقبل الأرقام العربية). الـ pattern وحده كان يقبل مثل "+++++++" */
-  const tel = cf.querySelector('input[type="tel"]');
-  if (tel) {
-    const chk = () => {
-      const d = tel.value.replace(/[^0-9\u0660-\u0669]/g, "").length;
-      tel.setCustomValidity(
-        !tel.value || (d >= 7 && d <= 15) ? "" : tel.title || "أدخل رقم هاتف صحيحًا",
-      );
-    };
-    tel.addEventListener("input", chk);
-    chk();
-  }
   cf.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!cf.reportValidity()) return;
@@ -84,7 +72,7 @@ if (cf) {
         .filter(([, v]) => v)
         .map(([k, v]) => "• " + k + ": " + v)
         .join("\n"),
-      msg = "مرحبًا MFT 👋\nأرغب في بدء رحلتي معكم في Online Medical Fitness Coaching.\n\n" + t,
+      msg = "مرحبًا MFT 👋\nلدي استفسار:\n\n" + t,
       u = WA_BASE + "?text=" + encodeURIComponent(msg),
       a = document.createElement("a");
     a.href = u;
@@ -95,7 +83,7 @@ if (cf) {
     a.remove();
     const st = document.getElementById("cstatus");
     if (st) {
-      st.textContent = "تم تجهيز رسالتك. اضغط إرسال داخل واتساب لإتمام الطلب.";
+      st.textContent = "تم تجهيز رسالتك. اضغط إرسال داخل واتساب لإرسالها.";
       st.hidden = false;
     }
   });

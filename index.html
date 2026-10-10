@@ -177,6 +177,7 @@
     </section>
 
     <script src="js/main.js" defer></script>
+    <script src="js/booking.js" defer></script>
     <script src="js/home-articles.js" defer></script>
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
       <defs>
@@ -265,7 +266,7 @@
               أكثر من <em>مجرد تدريب</em>
             </h2>
             <p class="ap rv" lang="ar" dir="rtl">
-              Medical Fitness Transformation منظومة <span dir="ltr">Online Medical Fitness Coaching</span> متكاملة تهدف إلى مساعدة الأشخاص على بناء جسم أقوى وحياة أكثر صحة، من خلال الجمع بين التدريب الرياضي، التغذية المخصصة، التقييم الصحي، والمتابعة المستمرة أونلاين.
+              MFT منظومة <span dir="ltr">Online Medical Fitness Coaching</span> متكاملة تهدف إلى مساعدة الأشخاص على بناء جسم أقوى وحياة أكثر صحة، من خلال الجمع بين التدريب الرياضي، التغذية المخصصة، التقييم الصحي، والمتابعة المستمرة أونلاين.
             </p>
             <p class="ap rv" lang="ar" dir="rtl">
               نحن لا نؤمن بوجود خطة واحدة تناسب الجميع. كل شخص لديه أهداف
@@ -287,7 +288,7 @@
         <div class="wrap">
           <header class="oc-head">
             <h2 class="ttl rv" id="h-coach" lang="ar" dir="rtl">
-              التدريب الأونلاين <em dir="ltr">(Online Coaching)</em>
+              التدريب الأونلاين <em dir="ltr">(Online Medical Fitness Coaching)</em>
             </h2>
             <p class="ap rv" lang="ar" dir="rtl">
               Online Medical Fitness Coaching من MFT هو برنامج أونلاين لمتابعة متكاملة ومخصصة، يجمع بين
@@ -1880,7 +1881,7 @@
               صحيًا تستطيع الاستمرار عليه.
             </p>
             <div class="ctas2">
-          <a  class="btn ghost rv" style="direction: rtl; padding-right: 20px;" lang="ar" href="#contact"
+          <a class="btn ghost rv" lang="ar" href="#contact"
                 >تواصل معنا
                 <span class="a"
                   ><svg aria-hidden="true"><use href="#arr" /></svg></span
@@ -1896,9 +1897,9 @@
         <div class="wrap">
           <header class="ct-head" lang="ar" dir="rtl">
             <p class="lbl">تواصل معنا</p>
-            <h2 class="ttl" id="h-contact">ابدأ <em>الخطوة الأولى</em></h2>
+            <h2 class="ttl" id="h-contact">هل لديك <em>استفسار؟</em></h2>
             <p class="ap">
-              هل لديك هدف تريد الوصول إليه؟ هل تريد برنامجًا تدريبيًا وغذائيًا أونلاين بإشراف طبي يناسبك؟ ابدأ بالتواصل مع MFT لمعرفة المسار المناسب لك.
+              لديك سؤال عن برامج MFT أو عن المتابعة أونلاين؟ راسلنا على واتساب أو اتصل بنا، ونسعد بالإجابة عن استفسارك.
             </p>
           </header>
           <div class="ct-join">
@@ -1925,17 +1926,11 @@
                   <a href="https://www.facebook.com/mohamed.adel.402955/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"></path></svg><span>Facebook</span><em dir="ltr">MFT</em></a>
                 </li>
               </ul>
-              <h3 class="ct-next-t">ماذا يحدث بعد إرسال طلبك؟</h3>
-              <ol class="ct-next">
-                <li><b>1</b><span><strong>أرسل طلبك</strong> — املأ النموذج أو راسلنا مباشرة.</span></li>
-                <li><b>2</b><span><strong>نتواصل معك عبر واتساب</strong> — نتعرف على هدفك وروتينك ومستواك.</span></li>
-                <li><b>3</b><span><strong>نحدد المسار المناسب لهدفك</strong> — خطة تدريب وتغذية مبنية عليك أنت.</span></li>
-              </ol>
             </aside>
             <form class="cf rv" id="cform" lang="ar" dir="rtl" method="dialog">
-              <h3 class="cf-title">تواصل معنا</h3>
+              <h3 class="cf-title">أرسل لنا رسالة</h3>
               <p class="cf-sub">
-                املأ بياناتك وسنفتح لك محادثة واتساب مباشرة لإرسال طلبك.
+                اكتب اسمك ورسالتك وسنفتح لك محادثة واتساب مباشرة.
               </p>
               <label class="cf-full"
                 >الاسم الكامل <b class="req" aria-hidden="true">*</b
@@ -1945,60 +1940,20 @@
                   required
                   maxlength="80"
                   autocomplete="name"
-                  placeholder="اكتب اسمك الكامل" /></label
-              ><label
-                >رقم الهاتف <b class="req" aria-hidden="true">*</b
-                ><input
-                  name="الهاتف"
-                  type="tel"
-                  required
-                  maxlength="20"
-                  pattern="[+0-9\u0660-\u0669\s\(\)\-]{7,20}"
-                  title="أدخل رقم هاتف صحيحًا (أرقام فقط، ويمكن أن يبدأ بـ +)"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  dir="ltr"
-                  placeholder="+20 1X XXXX XXXX" /></label
-              ><label
-                >البريد الإلكتروني <span class="opt">(اختياري)</span
-                ><input
-                  name="البريد"
-                  type="email"
-                  maxlength="100"
-                  autocomplete="email"
-                  dir="ltr"
-                  placeholder="name@example.com" /></label
-              ><label
-                >هدفك<span class="cf-sel"
-                  ><select name="الهدف">
-                    <option style="background: #fff;  color: #14181c;" selected disabled  value="">اختر هدفك</option>
-                    <option>خسارة الدهون</option>
-                    <option>بناء العضلات</option>
-                    <option>تثبيت الوزن</option>
-                    <option>زيادة الوزن</option>
-                    <option>تحسين اللياقة والصحة</option>
-                    <option>خطة تتناسب مع حالة صحية</option></select
-                  ><svg class="cf-chev" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" /></svg></span></label
-              ><label
-                >مستوى الخبرة<span class="cf-sel"
-                  ><select name="الخبرة">
-                    <option style="background: #fff;  color: #14181c;" selected disabled value="">اختر مستواك</option>
-                    <option>مبتدئ</option>
-                    <option>متوسط</option>
-                    <option>متقدم</option></select
-                  ><svg class="cf-chev" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" /></svg></span></label
-              ><label class="full"
-                >الرسالة <span class="opt">(اختياري)</span
+                  placeholder="اكتب اسمك" /></label
+              >
+              <label>رقم الهاتف <b class="req" aria-hidden="true">*</b><input name="الهاتف" type="tel" required="" maxlength="20" pattern="[+0-9\u0660-\u0669\s\(\)\-]{7,20}" title="أدخل رقم هاتف صحيحًا (أرقام فقط، ويمكن أن يبدأ بـ +)" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="+20 1X XXXX XXXX"></label>
+              <label class="full"
+                >رسالتك <b class="req" aria-hidden="true">*</b
                 ><textarea
                   name="الرسالة"
-                  rows="3"
+                  rows="4"
+                  required
                   maxlength="600"
-                  placeholder="اكتب رسالتك أو أي تفاصيل تحب أن نعرفها"
+                  placeholder="اكتب سؤالك أو استفسارك"
                 ></textarea></label
               ><button class="btn solid" type="submit">
-                إرسال الطلب
+                إرسال الرسالة
                 <span class="a"
                   ><svg aria-hidden="true"><use href="#arr" /></svg
                 ></span>
@@ -2008,7 +1963,7 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
                   <path d="M12 16v-4M12 8h.01" /></svg
-                >سيتم فتح واتساب لإرسال بياناتك، ولن يتم إرسال أي شيء قبل ضغطك
+                >سيتم فتح واتساب لإرسال رسالتك، ولن يتم إرسال أي شيء قبل ضغطك
                 على زر الإرسال هناك.
               </p>
             </form>

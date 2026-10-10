@@ -189,9 +189,6 @@ html {
   text-transform: uppercase;
   white-space: nowrap;
   transition: background 0.25s;
-      direction: rtl;
-    padding-right: 23px;
-    font-size: 16px;
 }
 .pill:hover {
   background: rgba(255, 255, 255, 0.08);
@@ -549,14 +546,14 @@ h1 .r {
   transform: translate(3px, -3px);
 }
 .btn.solid {
+  
+  color: #fff;
+  direction: rtl;
+  padding-right: 23px;
+  font-size: 16px;
+  padding-left: 17px;
   background: var(--red-ink);
   border-color: var(--red-ink);
-  color: #fff;
-
-    direction: rtl;
-    padding-right: 23px;
-    font-size: 16px;
-    padding-left: 17px;
 }
 .btn.solid .a {
   background: #fff;
@@ -1007,18 +1004,6 @@ h1 .r {
   border-bottom: 2px solid var(--brand-red);
   padding-bottom: 4px;
 }
-:where(body.p-home, body.p-trans) .bars i {
-  display: block;
-  height: 11px;
-  border-radius: 99px;
-  background: currentColor;
-  opacity: 0.16;
-  margin: 0 0 13px;
-}
-:where(body.p-home, body.p-trans) .bars.t i:first-child {
-  height: 15px;
-  opacity: 0.3;
-}
 :where(body.p-home, body.p-trans) .ar {
   display: block;
   font:
@@ -1120,11 +1105,6 @@ h1 .r {
 }
 :where(body.p-home, body.p-trans) .cta2 .ttl {
   font-size: clamp(3rem, 7vw, 6rem);
-}
-:where(body.p-home, body.p-trans) .cta2 .bars {
-  max-width: 420px;
-  margin-top: 24px;
-  color: #fff;
 }
 
 /* ===== content (home, trans) ===== */
@@ -4256,10 +4236,6 @@ body.pg:where(body.p-calc)::before {
   font-weight: 400;
   font-size: 1.02rem;
 }
-:where(body.p-home) #contact .cf .cf-sel {
-  position: relative;
-  display: block;
-}
 :where(body.p-home) #contact .cf select {
   width: 100%;
   padding: 10px 0 12px;
@@ -4297,20 +4273,6 @@ body.pg:where(body.p-calc)::before {
   outline: 2px solid rgba(255, 255, 255, 0.7);
   outline-offset: 4px;
   border-radius: 4px;
-}
-:where(body.p-home) #contact .cf .cf-chev {
-  position: absolute;
-  inset-inline-end: 2px;
-  top: 50%;
-  width: 18px;
-  height: 18px;
-  margin-top: -11px;
-  fill: none;
-  stroke: #c9ced8;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  pointer-events: none;
 }
 :where(body.p-home) #contact .cf-note {
   grid-column: 1/-1;
@@ -4353,8 +4315,7 @@ body.pg:where(body.p-calc)::before {
   gap: 2px 6px;
 }
 :where(body.p-home) #contact .cf label > input,
-:where(body.p-home) #contact .cf label > textarea,
-:where(body.p-home) #contact .cf label > .cf-sel {
+:where(body.p-home) #contact .cf label > textarea {
   flex: 1 0 100%;
   min-width: 0;
 }
@@ -4856,9 +4817,6 @@ body.p-home #contact .cf select:invalid {
 body.p-home #contact .cf select option {
   background: #fff;
   color: #111;
-}
-body.p-home #contact .cf .cf-chev {
-  stroke: #666;
 }
 body.p-home #contact .cf-status {
   color: #0b6b36;
@@ -5429,7 +5387,7 @@ body.p-home #method .pillars .chips li {
   overflow: hidden;
   isolation: isolate;
   gap: 14px;
-  padding: 7px 7px 7px 24px;
+  padding: 7px 23px 7px 17px;
   border: 0;
   color: #fff;
   font-size: 16px;
@@ -5445,10 +5403,8 @@ body.p-home #method .pillars .chips li {
     filter 0.35s;
     height: 50px;
 
-    direction: rtl;
-    padding-right: 23px;
+        direction: rtl;
     font-size: 16px;
-    padding-left: 17px;
 }
 .pill::before {
   content: "";
@@ -6116,40 +6072,6 @@ body.p-home #contact .ct-links em {
 }
 
 /* what happens next */
-body.p-home #contact .ct-next-t {
-  margin: 4px 0 -6px;
-  padding-top: 20px;
-  border-top: 1px solid var(--hl);
-  font: 800 1.05rem/1.4 "Cairo", sans-serif;
-  color: var(--on-light);
-}
-body.p-home #contact .ct-next {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-body.p-home #contact .ct-next li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font: 400 0.92rem/1.75 "Cairo", sans-serif;
-  color: #555;
-}
-body.p-home #contact .ct-next b {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  margin-top: 2px;
-  border-radius: 50%;
-  background: #fbeaea;
-  color: var(--red-ink);
-  font: 700 0.85rem/1 "Cairo", sans-serif;
-}
-body.p-home #contact .ct-next strong { color: var(--on-light); font-weight: 700; }
 
 @media (max-width: 480px) {
   body.p-home #contact .ct-links em { display: none; }
@@ -7254,8 +7176,7 @@ body .ft .fbrand .slog { margin: 0 0 16px; font-size: 0.66rem; letter-spacing: 0
   .nav.open .links .menu-cta-li {
     display: block;
     margin-top: auto; /* يثبت أسفل اللوحة */
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+   
     border-bottom: 0;
   }
   .nav.open .links a.menu-cta {
@@ -7913,4 +7834,1087 @@ body:has(
   }
 }
 
+/* ===== كارت الحجز (js/booking.js): لوحتان، هوية MFT + الفورم ===== */
+html.bk-lock {
+  overflow: hidden;
+}
+.bk {
+  --bk-red: #e50914;
+  --bk-ink: #0d0d10;
+  --bk-mut: #5f6672;
+  --bk-line: #d9dce2;
+  border: 0;
+  padding: 0;
+  margin: auto;
+  width: min(1180px, calc(100vw - 32px));
+  max-width: none;
+  max-height: none;
+  background: transparent;
+  color: var(--bk-ink);
+  font-family: Cairo, Barlow, system-ui, sans-serif;
+  overflow: visible;
+}
+.bk::backdrop {
+  background: rgba(6, 6, 9, 0.78);
+  backdrop-filter: blur(6px);
+}
+.bk[open] {
+  animation: bk-in 0.26s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.bk[open]::backdrop {
+  animation: bk-fade 0.26s ease both;
+}
+@keyframes bk-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bk-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bk [hidden] {
+  display: none !important;
+}
+.bk svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* البطاقة: الهوية يسارًا والفورم يمينًا (الاتجاه المادي ثابت، والنص داخلها RTL) */
+.bk-card {
+  position: relative;
+  display: flex;
+  direction: ltr;
+  max-height: calc(100dvh - 32px);
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+.bk-x {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.bk-x:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+.bk-x svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
 
+/* ---- لوحة الهوية ---- */
+.bk-side {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 41%;
+  min-width: 0;
+  color: #fff;
+}
+.bk-side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -8px;
+  background: linear-gradient(180deg, #ff2d2d, #b70d14);
+}
+.bk-sbg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 7, 9, 0.95) 0%, rgba(7, 7, 9, 0.8) 55%, rgba(7, 7, 9, 0.5) 100%),
+    url("../assets/images/hero-bg.jpg") 78% 25% / cover no-repeat,
+    #09090b;
+}
+.bk-sin {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 38px 26% 30px 44px;
+}
+.bk-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  width: max-content;
+  max-width: 100%;
+}
+.bk-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: italic 800 3rem/1 "Barlow Condensed", Anton, Impact, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.bk-logo b {
+  font-weight: 800;
+}
+.bk-logo .r {
+  color: var(--bk-red);
+}
+.bk .bk-pulse {
+  width: 54px;
+  height: 28px;
+  stroke: var(--bk-red);
+  stroke-width: 2.2;
+  flex: none;
+}
+.bk-brand small {
+  align-self: stretch;
+  text-align: center;
+  font: 500 0.66rem/1.4 Barlow, sans-serif;
+  letter-spacing: 0.24em;
+  white-space: nowrap;
+  color: #e9e9ee;
+}
+.bk-hl {
+  margin-top: 44px;
+  font: 800 2.6rem/1.35 Cairo, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.bk-hl span {
+  display: block;
+  color: var(--bk-red);
+  font: italic 800 3.5rem/1.05 "Barlow Condensed", Anton, Impact, sans-serif;
+  text-align: right;
+  white-space: nowrap;
+}
+.bk-lead {
+  margin: 22px 0 0;
+  max-width: 26em;
+  color: #dcdce2;
+  font-size: 1.04rem;
+  line-height: 2;
+}
+.bk-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.bk-feats li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.bk-fi {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--bk-red);
+  border-radius: 50%;
+  color: var(--bk-red);
+  background: rgba(229, 9, 20, 0.08);
+}
+.bk-fi svg {
+  width: 26px;
+  height: 26px;
+}
+.bk-feats b {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.bk-feats small {
+  display: block;
+  margin-top: 2px;
+  color: #cfcfd6;
+  font-size: 0.92rem;
+}
+.bk-tag {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+.bk-tag svg {
+  width: 100%;
+  max-width: 280px;
+  height: 30px;
+  stroke: var(--bk-red);
+  stroke-width: 1.6;
+}
+.bk-tag span {
+  font: 500 0.72rem/1.4 Barlow, sans-serif;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  color: #e9e9ee;
+}
+
+/* ---- لوحة الفورم ---- */
+.bk-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  direction: rtl;
+  background: #fff;
+}
+.bk-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.bk-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px 34px 8px 30px;
+}
+.bk-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+  color: #7b828e;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.bk-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  direction: ltr;
+}
+.bk-bar i {
+  display: block;
+  width: 30px;
+  height: 5px;
+  border-radius: 5px;
+  background: #e3e5ea;
+}
+.bk-bar i.on {
+  width: 50px;
+  background: var(--bk-red);
+}
+.bk-bar i.dot {
+  width: 6px;
+}
+.bk .bk-title {
+  margin: 0 0 4px;
+  font: 800 2.05rem/1.35 Cairo, Barlow, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--bk-ink);
+}
+.bk .bk-title:focus {
+  outline: none;
+}
+.bk-sub {
+  margin: 0 0 18px;
+  color: var(--bk-mut);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.bk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 22px;
+}
+.bk-full {
+  grid-column: 1 / -1;
+}
+.bk-f {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.bk-f label,
+.bk-f legend {
+  padding: 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--bk-ink);
+}
+.bk-f legend {
+  margin-bottom: 6px;
+}
+.bk-req {
+  color: var(--bk-red);
+  font-weight: 800;
+}
+/* مربع الإدخال: إطار + أيقونة (يسارًا للحقول النصية، يمينًا للقوائم) */
+.bk-box {
+  position: relative;
+  display: block;
+  border: 1.5px solid var(--bk-line);
+  border-radius: 9px;
+  background: #fbfbfc;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.bk-box:focus-within {
+  border-color: var(--bk-red);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+.bk-f.bad .bk-box {
+  border-color: #d4111b;
+  background: #fff7f7;
+}
+.bk .bk-box > .bk-ic {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 21px;
+  height: 21px;
+  margin-top: -10.5px;
+  color: #9aa1ac;
+  pointer-events: none;
+}
+.bk .bk-sel > .bk-ic {
+  left: auto;
+  right: 14px;
+}
+.bk .bk-sel > .bk-chev {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 17px;
+  height: 17px;
+  margin-top: -8.5px;
+  color: #6b7280;
+  pointer-events: none;
+}
+.bk input.bk-in,
+.bk select.bk-in,
+.bk textarea.bk-in {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0 16px 0 44px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--bk-ink);
+  font: 500 1rem/1.6 Cairo, Barlow, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: right;
+  outline: none;
+  appearance: none;
+}
+.bk select.bk-in {
+  padding: 0 46px 0 38px;
+  cursor: pointer;
+}
+.bk select.bk-in:invalid,
+.bk select.bk-in:has(option[value=""]:checked) {
+  color: #8a919c;
+}
+.bk textarea.bk-in {
+  height: auto;
+  min-height: 62px;
+  padding: 11px 16px;
+  resize: vertical;
+}
+.bk .bk-in::placeholder {
+  color: #8a919c;
+  font-weight: 400;
+}
+.bk-fe {
+  color: #c8101a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* بطاقات الباقات وطريقة الدفع */
+.bk-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.bk-pays {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bk-pays {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.bk-opt {
+  display: block;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.bk-opt input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bk-oc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 88px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bk-pay-logo {
+     width: 85px;
+    height: 35px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bk-oc b {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bk-opt input[type="radio"]:checked + .bk-oc {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgb(22 163 74 / 12%);
+  background: #f0fdf4;
+}
+
+.bk-opt:focus-within .bk-oc {
+  outline: 2px solid #16a34a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .bk-pays {
+    gap: 10px;
+  }
+
+  .bk-oc {
+    flex-direction: column;
+    gap: 8px;
+    min-height: 100px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .bk-pay-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .bk-oc b {
+    font-size: 13px;
+  }
+}
+.bk-opt {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.bk-opt input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.bk .bk-f label.bk-opt {
+  font-weight: 500;
+}
+.bk-oc {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--bk-line);
+  border-radius: 9px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition:
+    border-color 0.18s,
+    background 0.18s,
+    box-shadow 0.18s;
+}
+.bk-pc {
+  gap: 10px;
+  padding: 10px 14px;
+}
+.bk .bk-oi {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  color: #9aa1ac;
+  transition: color 0.18s;
+}
+.bk-pt {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  text-align: center;
+}
+.bk-pt b {
+  font: 800 0.92rem/1.3 Barlow, sans-serif;
+  letter-spacing: 0.02em;
+}
+.bk-pt small {
+  color: var(--bk-mut);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.bk-pt em {
+  font: normal 600 0.8rem/1.4 Barlow, sans-serif;
+  color: #2b2f36;
+}
+.bk-rad {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #c5c9d1;
+  border-radius: 50%;
+  background: #fff;
+  transition: border-color 0.18s;
+}
+.bk-rad::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--bk-red);
+  transform: scale(0);
+  transition: transform 0.18s;
+}
+.bk-opt input:checked + .bk-oc {
+  border-color: var(--bk-red);
+  background: #fffafa;
+  box-shadow: 0 0 0 1px var(--bk-red) inset;
+}
+.bk-opt input:checked + .bk-oc .bk-rad {
+  border-color: var(--bk-red);
+}
+.bk-opt input:checked + .bk-oc .bk-rad::after {
+  transform: scale(1);
+}
+.bk-opt input:checked + .bk-oc .bk-oi {
+  color: var(--bk-red);
+}
+.bk-opt input:focus-visible + .bk-oc {
+  outline: 2px solid var(--bk-red);
+  outline-offset: 3px;
+}
+.bk-f.bad .bk-oc {
+  border-color: #e7a2a6;
+}
+
+/* الزر السفلي */
+.bk-foot {
+  padding: 12px 34px 18px 30px;
+  background: #fff;
+}
+.bk-sum {
+  margin: 0 0 10px;
+  padding: 9px 14px;
+  border: 1px solid #ffc9cd;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: #a50d16;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.bk-submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 10px 64px;
+  border: 2px solid var(--bk-red);
+  border-radius: 999px;
+  background: #0b0b0e;
+  color: #fff;
+  font: 800 1.08rem Cairo, Barlow, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+.bk-submit:hover {
+  box-shadow: 0 8px 24px rgba(229, 9, 20, 0.35);
+}
+.bk-submit:active {
+  transform: translateY(1px);
+}
+.bk-submit:focus-visible,
+.bk-x:focus-visible,
+.bk-link:focus-visible {
+  outline: 2px solid var(--bk-red);
+  outline-offset: 3px;
+}
+.bk-go {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: var(--bk-red);
+  color: #fff;
+}
+.bk-go svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+.bk-note {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0 0;
+  color: #6c7380;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  text-align: center;
+}
+.bk-note svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+}
+
+/* شاشة النجاح */
+.bk-done {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  text-align: center;
+}
+.bk-done p {
+  margin: 0 auto 14px;
+  max-width: 440px;
+  color: var(--bk-mut);
+  line-height: 1.9;
+}
+.bk-done .bk-title {
+  margin-bottom: 14px;
+}
+.bk-ok {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #e8f7ee;
+  color: #138a47;
+}
+.bk-ok svg {
+  width: 38px;
+  height: 38px;
+  stroke-width: 2.4;
+}
+.bk-small {
+  font-size: 0.9rem;
+}
+.bk-link {
+  color: var(--bk-red);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.bk-close {
+  max-width: 320px;
+  margin-top: 18px;
+}
+
+/* الشاشات المتوسطة والموبايل: الهوية تصير شريطًا علويًا مختصرًا */
+@media (max-width: 960px) {
+  .bk {
+    width: 100%;
+    margin: auto 0 0;
+  }
+  .bk-card {
+    flex-direction: column;
+    max-height: 95dvh;
+    border-radius: 24px 24px 0 0;
+  }
+  .bk-side {
+    flex: none;
+  }
+  .bk-side::before {
+    display: none;
+  }
+  .bk-sbg {
+    clip-path: none;
+    background:
+      linear-gradient(90deg, rgba(7, 7, 9, 0.92), rgba(7, 7, 9, 0.7)),
+      url("../assets/images/hero-bg.jpg") 80% 25% / cover no-repeat,
+      #09090b;
+  }
+  .bk-sin {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 64px;
+  }
+  .bk-logo {
+    font-size: 2.1rem;
+  }
+  .bk-pulse {
+    width: 40px;
+    height: 22px;
+  }
+  .bk-brand small {
+    font-size: 0.56rem;
+    letter-spacing: 0.26em;
+  }
+  .bk-hl,
+  .bk-lead,
+  .bk-feats,
+  .bk-tag {
+    display: none;
+  }
+  .bk-body {
+    padding: 20px 22px 6px;
+  }
+  .bk .bk-title {
+    font-size: 1.7rem;
+  }
+  .bk-foot {
+    padding: 10px 22px calc(14px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid #eceef2;
+  }
+}
+@media (max-width: 640px) {
+  .bk-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .bk-plans {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .bk-oc {
+    padding: 10px;
+    gap: 6px;
+    font-size: 0.88rem;
+  }
+  .bk-oc b {
+    white-space: nowrap;
+  }
+  .bk-done {
+    padding: 40px 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bk[open],
+  .bk[open]::backdrop {
+    animation: none;
+  }
+}
+
+
+
+/* ============================================================
+   MFT Footer Styles (نفس ستايل J3 University)
+   ضيفه في ملف الستايل الموجود عندك
+   ============================================================ */
+
+.ft {
+  background: #0b0b0b
+;
+  color: #e9e9e9
+;
+  padding: 28px clamp(16px, 4vw, 48px) 16px;
+  font-size: 14px;
+  font-family: inherit;
+  direction: rtl;
+}
+
+.ft .fg {
+  direction:ltr;
+  display: grid;
+  grid-template-columns: auto 1fr auto;            /* لوجو | روابط | سوشيال */
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+}
+
+/* البراند يسار */
+.fbrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+.fbrand:hover { color: inherit; }
+.fbrand .flogo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #fff;
+}
+.fbrand .fbt b {
+  display: block;
+  font-size: 18px;
+  letter-spacing: .04em;
+  color: #fff;
+}
+.fbrand .fbt small {
+  display: block;
+  font-size: 10px;
+  color: #9a9a9a
+;
+  letter-spacing: .14em;
+  margin-top: 2px;
+}
+
+/* الروابط في النص */
+.flinks {
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2.4vw, 26px);
+  justify-content: center;
+}
+.flinks a {
+  color: inherit;
+  text-decoration: none;
+  opacity: .9;
+  transition: opacity .2s, color .2s;
+  font-size: 14px;
+}
+.flinks a:hover { opacity: 1; color: #16a34a
+; }
+
+/* السوشيال يمين */
+.fsoc {
+  display: inline-flex;
+  gap: 10px;
+}
+.fsoc a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .06);
+  color: inherit;
+  transition: background .2s, transform .2s;
+}
+.fsoc a:hover { background: #16a34a
+; transform: translateY(-2px); }
+.fsoc .fsc {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* فاصل بين الصف والشريط */
+.fsep {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  margin: 4px 0 12px;
+}
+
+/* شريط الحقوق */
+.ft .fbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #9a9a9a;
+  
+   margin-top: 0px;
+}
+.ft .fbar p { margin: 0; }
+.ft .fbar a {
+  color: #cfcfcf
+;
+  text-decoration: none;
+  transition: color .2s;
+}
+.ft .fbar a:hover { color: #16a34a
+; }
+
+/* تجاوب: تحت 720px تتحول لعمود واحد */
+@media (max-width: 720px) {
+  .ft .fg {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    gap: 18px;
+  }
+  .fbrand { justify-content: center; }
+  .fsoc { justify-content: center; }
+  .ft .fbar { justify-content: center; text-align: center; }
+}
+
+
+
+/* ============================================================
+   MFT Booking Card - CSS مقترح
+   ضيفه في ملف الستايل عندك (أو استورد مft-booking.css)
+   ============================================================ */
+
+/* إخفاء/إظهار الصفحات */
+.bk-step[hidden] { display: none !important; }
+
+/* Progress dots (النقطتين في الـ header) */
+.bk-bdot {
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .12);
+  display: inline-block;
+  transition: background .25s, box-shadow .25s;
+}
+.bk-bdot.on { background: var(--bk-accent, #16a34a); }
+.bk-bdot.cur { box-shadow: 0 0 0 3px rgba(22, 163, 74, .18); }
+
+/* أزرار الفوتر (التالي / السابق / إرسال) */
+.bk-actions {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+.bk-actions .bk-submit { flex: 1; }
+
+/* حاوية الأيقونة داخل الأزرار */
+.bk-go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* سهم الـ SVG (path الأصلية مصممة للـ fill) */
+.bk-arr {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform .2s;
+}
+
+/* ============================================================
+   زرار "السابق" — تصميم أنضف مع hover ناعم
+   ============================================================ */
+.bk-back {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, .14);
+  background: #fff;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+  transition: background .2s, border-color .2s, transform .15s, box-shadow .2s, color .2s;
+}
+.bk-back:hover {
+  background: #f6f6f6;
+  border-color: rgba(0, 0, 0, .24);
+  color: var(--bk-accent, #16a34a);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+.bk-back:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+.bk-back:focus-visible {
+  outline: 2px solid var(--bk-accent, #16a34a);
+  outline-offset: 2px;
+}
+
+/* قلب السهم في زر "السابق" (scaleX سالب يعكسه أفقيًا) */
+.bk-flip { transform: scaleX(-1); }
+
+/* ============================================================
+   أنيميشن السهم في الـ hover
+   ============================================================ */
+.bk-submit:hover .bk-arr { transform: translateX(-4px); }
+.bk-back:hover .bk-arr { transform: translateX(4px); }
+.bk-flip:hover .bk-arr { transform: translateX(4px) scaleX(-1); }
